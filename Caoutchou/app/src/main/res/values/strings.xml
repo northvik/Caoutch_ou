@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Caoutch\'où</string>
+    <string name="title_activity_maps">Caoutch\'où</string>
+    <string name="settings">Préferences</string>
+    <string name="menuSet">Le menu des préferences</string>
+
+</resources>
