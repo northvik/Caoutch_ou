@@ -26,6 +26,7 @@ import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -110,12 +111,8 @@ public class MapsActivity extends ActionBarActivity implements
      * Elle doit être appelée une seule fois pour être sur que {@link #mMap} n'est pas null
      */
     private void setUpMap() {
-        mMap.addMarker(new MarkerOptions().position(new LatLng(50, 0)).title("Marker"));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(80, 0)).title("Test2"));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(24, 0)).title("Test3"));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(78, 0)).title("Marker2"));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(12, 0)).title("Marker3"));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(45, 0)).title("Marker4").rotation(34));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(48.872568, 2.275998)).title("Marker").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_launcher)));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(48.899628, 2.351833)).title("Test2").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_launcher)));
     }
 
     @Override
