@@ -39,6 +39,10 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.FileReader;
+import java.util.ArrayList;
+
+import data.com.model.Distributeur;
+import data.com.model.Pharmacie;
 
 public class MapsActivity extends ActionBarActivity implements
         GooglePlayServicesClient.ConnectionCallbacks,
@@ -48,6 +52,8 @@ public class MapsActivity extends ActionBarActivity implements
     private LocationManager mLocMgr;
     private LocationClient mLocationClient;
     private final static int CONNECTION_FAILURE_RESOLUTION_REQUEST = 9000;
+    private ArrayList<Pharmacie> pharmacies = new ArrayList<Pharmacie>();
+    private ArrayList<Distributeur> distributeurs = new ArrayList<Distributeur>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -157,6 +163,8 @@ public class MapsActivity extends ActionBarActivity implements
      * Elle doit être appelée une seule fois pour être sur que {@link #mMap} n'est pas null
      */
     private void setUpMap() {
+        pharmacies.clear();
+        distributeurs.clear();
         mMap.addMarker(new MarkerOptions().position(new LatLng(50, 0)).title("Marker").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_launcher)));
         mMap.addMarker(new MarkerOptions().position(new LatLng(80, 0)).title("Test2"));
         mMap.addMarker(new MarkerOptions().position(new LatLng(24, 0)).title("Test3"));
