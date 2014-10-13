@@ -171,7 +171,7 @@ public class MapsActivity extends ActionBarActivity implements
 
     private void setUpMarkerDistrib(String title, String address,String horaire, Double lat, Double lng) {
         StringBuilder snippet = new StringBuilder();
-        snippet.append("Horaires: ").append(horaire);
+        snippet.append(address).append("\nHoraires: ").append(horaire);
         mMap.addMarker(new MarkerOptions().position(new LatLng(lat, lng)).title(title)
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_distrib))
                 .snippet(snippet.toString()));
@@ -179,7 +179,7 @@ public class MapsActivity extends ActionBarActivity implements
 
     private void setUpMarkerPharma(String title, String address, String horaire, Double lat, Double lng) {
         StringBuilder snippet = new StringBuilder();
-        snippet.append("Horaires: ").append(horaire);
+        snippet.append(address).append("\nHoraires: ").append(horaire);
         mMap.addMarker(new MarkerOptions().position(new LatLng(lat, lng)).title(title)
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_pharma))
                 .snippet(snippet.toString()));
