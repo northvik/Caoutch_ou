@@ -11,6 +11,7 @@ import android.support.v4.app.DialogFragment;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
+import android.util.JsonReader;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -29,6 +30,11 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.FileReader;
 
 public class MapsActivity extends ActionBarActivity implements
         GooglePlayServicesClient.ConnectionCallbacks,
@@ -111,18 +117,23 @@ public class MapsActivity extends ActionBarActivity implements
      * Elle doit être appelée une seule fois pour être sur que {@link #mMap} n'est pas null
      */
     private void setUpMap() {
-        mMap.addMarker(new MarkerOptions().position(new LatLng(48.872568, 2.275998)).title("Marker").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_distrib)));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(48.899628, 2.351833)).title("Test2").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_pharma)));
+        setUpMarkerDistrib("Stade Jean Pierre Wimille", "56 Bd de l'Amiral Bruix 75016 Paris  France", "7h à 22h30", 48.872568, 2.275998);
     }
 
-    private void setUpMarkerDistrib(String title, String address, Integer lat, Integer lng) {
+    private void setUpMarkerDistrib(String title, String address,String horaire, Double lat, Double lng) {
+        StringBuilder snippet = new StringBuilder();
+        snippet.append("Horaires: ").append(horaire);
         mMap.addMarker(new MarkerOptions().position(new LatLng(lat, lng)).title(title)
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_distrib)));
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_distrib))
+                .snippet(snippet.toString()));
     }
 
-    private void setUpMarkerPharma(String title, String address, Integer lat, Integer lng) {
+    private void setUpMarkerPharma(String title, String address, String horaire, Double lat, Double lng) {
+        StringBuilder snippet = new StringBuilder();
+        snippet.append("Horaires: ").append(horaire);
         mMap.addMarker(new MarkerOptions().position(new LatLng(lat, lng)).title(title)
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_pharma)));
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_pharma))
+                .snippet(snippet.toString()));
     }
 
     @Override
