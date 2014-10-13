@@ -111,8 +111,18 @@ public class MapsActivity extends ActionBarActivity implements
      * Elle doit être appelée une seule fois pour être sur que {@link #mMap} n'est pas null
      */
     private void setUpMap() {
-        mMap.addMarker(new MarkerOptions().position(new LatLng(48.872568, 2.275998)).title("Marker").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_launcher)));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(48.899628, 2.351833)).title("Test2").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_launcher)));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(48.872568, 2.275998)).title("Marker").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_distrib)));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(48.899628, 2.351833)).title("Test2").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_pharma)));
+    }
+
+    private void setUpMarkerDistrib(String title, String address, Integer lat, Integer lng) {
+        mMap.addMarker(new MarkerOptions().position(new LatLng(lat, lng)).title(title)
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_distrib)));
+    }
+
+    private void setUpMarkerPharma(String title, String address, Integer lat, Integer lng) {
+        mMap.addMarker(new MarkerOptions().position(new LatLng(lat, lng)).title(title)
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_pharma)));
     }
 
     @Override
