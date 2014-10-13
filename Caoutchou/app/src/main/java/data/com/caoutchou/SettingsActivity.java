@@ -10,8 +10,6 @@ import android.view.MenuItem;
 
 public class SettingsActivity extends ActionBarActivity {
 
-	private SharedPreferences settings;
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

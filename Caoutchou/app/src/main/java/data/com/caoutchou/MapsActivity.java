@@ -1,9 +1,12 @@
 package data.com.caoutchou;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentSender;
+import android.graphics.BitmapFactory;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -26,12 +29,15 @@ import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapsActivity extends ActionBarActivity implements
         GooglePlayServicesClient.ConnectionCallbacks,
-        GooglePlayServicesClient.OnConnectionFailedListener {
+        GooglePlayServicesClient.OnConnectionFailedListener, ActionBar.OnNavigationListener, GoogleMap.OnInfoWindowClickListener {
 
     private GoogleMap mMap; // Peut être null si Google Play services APK n'est pas dispo.
     private LocationManager mLocMgr;
@@ -45,9 +51,45 @@ public class MapsActivity extends ActionBarActivity implements
         actBar.setSubtitle("Le préservatif c'est le kiff");
         setContentView(R.layout.activity_maps);
         mLocMgr = (LocationManager) getSystemService(LOCATION_SERVICE);
-        mLocMgr.requestLocationUpdates(LocationManager.GPS_PROVIDER,500, 0, mLocationListener);
         mLocationClient = new LocationClient(this, this, this);
-        setUpMapIfNeeded();
+        mLocMgr.requestLocationUpdates(LocationManager.GPS_PROVIDER, 500, 0, mLocationListener);
+        if (isGpsOn()){
+            setUpMapIfNeeded();
+            mMap.setInfoWindowAdapter(new PopupAdapter(getLayoutInflater()));
+            mMap.setOnInfoWindowClickListener(this);
+        }
+        else{
+            showGPSDisabledAlertToUser();
+        }
+    }
+
+    private boolean isGpsOn() {
+        return mLocMgr.isProviderEnabled(LocationManager.GPS_PROVIDER);
+    }
+
+
+    private void showGPSDisabledAlertToUser(){
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+        alertDialogBuilder.setMessage("Voulez vous activer votre GPS ?")
+                .setCancelable(false)
+                .setPositiveButton("Activer le GPS",
+                        new DialogInterface.OnClickListener(){
+                            public void onClick(DialogInterface dialog, int id){
+                                Intent callGPSSettingIntent = new Intent(
+                                        android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                                startActivity(callGPSSettingIntent);
+
+                            }
+                        });
+        alertDialogBuilder.setNegativeButton("Annuler",
+                new DialogInterface.OnClickListener(){
+                    public void onClick(DialogInterface dialog, int id){
+                        dialog.cancel();
+                    }
+                });
+        AlertDialog alert = alertDialogBuilder.create();
+        alert.show();
+
     }
 
     LocationListener mLocationListener = new LocationListener() {
@@ -110,23 +152,31 @@ public class MapsActivity extends ActionBarActivity implements
      * Elle doit être appelée une seule fois pour être sur que {@link #mMap} n'est pas null
      */
     private void setUpMap() {
-        mMap.addMarker(new MarkerOptions().position(new LatLng(50, 0)).title("Marker"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(50, 0)).title("Marker").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_launcher)));
         mMap.addMarker(new MarkerOptions().position(new LatLng(80, 0)).title("Test2"));
         mMap.addMarker(new MarkerOptions().position(new LatLng(24, 0)).title("Test3"));
         mMap.addMarker(new MarkerOptions().position(new LatLng(78, 0)).title("Marker2"));
         mMap.addMarker(new MarkerOptions().position(new LatLng(12, 0)).title("Marker3"));
         mMap.addMarker(new MarkerOptions().position(new LatLng(45, 0)).title("Marker4").rotation(34));
+
+        addMarker(mMap, 50, 5, "Le distributeur", "Original home of the Heisman Trophy\nTest");
+        addMarker(mMap, 50, 2, "Le Distrib", "Original home of the Heisman Trophy\nTest");
+    }
+
+    private void addMarker(GoogleMap map, double lat, double lon,
+                           String title, String snippet) {
+        map.addMarker(new MarkerOptions().position(new LatLng(lat, lon))
+                .title(title)
+                .snippet(snippet));
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        if(isGooglePlayServicesAvailable()){
+        if(isGooglePlayServicesAvailable() && isGpsOn()){
             mLocationClient.connect();
         }
-
     }
-
 
     @Override
     protected void onStop() {
@@ -173,6 +223,7 @@ public class MapsActivity extends ActionBarActivity implements
         Location location = mLocationClient.getLastLocation();
         LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
         CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, 17);
+        setUpMapIfNeeded();
         mMap.animateCamera(cameraUpdate);
     }
 
@@ -199,6 +250,16 @@ public class MapsActivity extends ActionBarActivity implements
         } else {
             Toast.makeText(getApplicationContext(), "Désolé. Aucun signal GPS trouvé !", Toast.LENGTH_LONG).show();
         }
+    }
+
+    @Override
+    public void onInfoWindowClick(Marker marker) {
+       //Toast.makeText(this, marker.getTitle(), Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(int i, long l) {
+        return false;
     }
 
 
