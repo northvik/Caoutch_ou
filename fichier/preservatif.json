@@ -1,1 +1,634 @@
-[{"datasetid": "distributeurspreservatifsmasculinsparis2012", "recordid": "473e8d17b95ff99c532a41139a401ce929af4586", "fields": {"horaires_vacances_hiver": "ferm\u00e9", "horaires_vacances_ete": "8h \u00e0 18h", "adresse": "56 Bd de l'Amiral Bruix", "site": "Stade Jean Pierre Wimille", "annee_installation": "2008/2009", "acces": "Int\u00e9rieur", "geo_coordinates": [48.872568, 2.275998], "adresse_complete": "56 Bd de l'Amiral Bruix 75016 Paris  France", "arrond": 75016, "horaires_normal": "7h \u00e0 22h30"}, "geometry": {"type": "Point", "coordinates": [2.275998, 48.872568]}, "record_timestamp": "2014-08-13T20:24:04.556853"},{"datasetid": "distributeurspreservatifsmasculinsparis2012", "recordid": "a2d06e9c76efbba258b040bdb6ba18916d0df995", "fields": {"adresse": "2 rue Jean Cocteau", "site": "Centre sportif Poissonniers", "annee_installation": "2008/2009", "acces": "Ext\u00e9rieur", "geo_coordinates": [48.899628, 2.351833], "adresse_complete": "2 rue Jean Cocteau 75018 Paris  France", "arrond": 75018}, "geometry": {"type": "Point", "coordinates": [2.351833, 48.899628]}, "record_timestamp": "2014-08-13T20:24:04.556853"},{"datasetid": "distributeurspreservatifsmasculinsparis2012", "recordid": "90460728f9dcc0c2e40f2531037b4c322b5fefa8", "fields": {"horaires_vacances_hiver": "ferm\u00e9", "adresse": "34 rue des docteurs D\u00e9j\u00e9rine", "site": "Centre sportif D\u00e9j\u00e9rine", "annee_installation": "2008/2009", "acces": "Int\u00e9rieur", "geo_coordinates": [48.856795, 2.411563], "adresse_complete": "34 rue des docteurs D\u00e9j\u00e9rine 75020 Paris  France", "arrond": 75020}, "geometry": {"type": "Point", "coordinates": [2.411563, 48.856795]}, "record_timestamp": "2014-08-13T20:24:04.556853"},{"datasetid": "distributeurspreservatifsmasculinsparis2012", "recordid": "1073ed89c38b4512f088b312b7aafa07634e6b3a", "fields": {"horaires_vacances_hiver": "ferm\u00e9", "adresse": "1 rue Fleury Centre Musical", "site": "Kiosque jeunes Goutte D'Or", "annee_installation": "2010", "acces": "Int\u00e9rieur", "geo_coordinates": [48.89247, 2.34463], "adresse_complete": "1 rue Fleury Centre Musical 75018 Paris  France", "arrond": 75018}, "geometry": {"type": "Point", "coordinates": [2.34463, 48.89247]}, "record_timestamp": "2014-08-13T20:24:04.556853"},{"datasetid": "distributeurspreservatifsmasculinsparis2012", "recordid": "d6ab02af577dd79ac561f34e74ebe70ae2d92e4d", "fields": {"adresse": "32 rue du Javelot Tour Anvers", "site": "Antenne jeunes Olympiades", "annee_installation": "2010", "acces": "Ext\u00e9rieur", "geo_coordinates": [48.824405, 2.365686], "adresse_complete": "32 rue du Javelot Tour Anvers 75013 Paris  France", "arrond": 75013}, "geometry": {"type": "Point", "coordinates": [2.365686, 48.824405]}, "record_timestamp": "2014-08-13T20:24:04.556853"},{"datasetid": "distributeurspreservatifsmasculinsparis2012", "recordid": "b2a4d390c013fae1fec3d15b4775110030c3ef08", "fields": {"horaires_vacances_hiver": "10h \u00e0 20h", "adresse": "54 Bd Ney", "site": "Espace jeunes Charles Hermitte", "annee_installation": "2010", "acces": "Int\u00e9rieur", "geo_coordinates": [48.898551, 2.363065], "adresse_complete": "54 Bd Ney 75018 Paris  France", "arrond": 75018, "horaires_normal": "10h \u00e0 20h"}, "geometry": {"type": "Point", "coordinates": [2.363065, 48.898551]}, "record_timestamp": "2014-08-13T20:24:04.556853"},{"datasetid": "distributeurspreservatifsmasculinsparis2012", "recordid": "7185e8ff8e457956a1e26448536378510b0c96d8", "fields": {"horaires_vacances_hiver": "8h \u00e0 17h", "horaires_vacances_ete": "8h \u00e0 21h", "adresse": "68 Bd Poniatowsky", "site": "Centre sportif L\u00e9o Lagrange", "annee_installation": "2008/2009", "acces": "Int\u00e9rieur", "geo_coordinates": [48.832304, 2.399533], "adresse_complete": "68 Bd Poniatowsky 75012 Paris  France", "arrond": 75012, "horaires_normal": "8h \u00e0 22h"}, "geometry": {"type": "Point", "coordinates": [2.399533, 48.832304]}, "record_timestamp": "2014-08-13T20:24:04.556853"},{"datasetid": "distributeurspreservatifsmasculinsparis2012", "recordid": "0b4904ffa57d9c8827d5a453b4baef8dd7aacb0c", "fields": {"horaires_vacances_hiver": "9h \u00e0 22h30", "horaires_vacances_ete": "8h \u00e0 22h", "adresse": "3 Av Maurice D'Ocagne", "site": "Centre sportif Jules No\u00ebl", "annee_installation": "2008/2009", "acces": "Int\u00e9rieur", "geo_coordinates": [48.824199, 2.315428], "adresse_complete": "3 Av Maurice D'Ocagne 75014 Paris  France", "arrond": 75014, "horaires_normal": "8h \u00e0 22h30"}, "geometry": {"type": "Point", "coordinates": [2.315428, 48.824199]}, "record_timestamp": "2014-08-13T20:24:04.556853"},{"datasetid": "distributeurspreservatifsmasculinsparis2012", "recordid": "a16ba03b9f06369c543e988902d1052633b5a08b", "fields": {"horaires_vacances_hiver": "7h \u00e0 19h", "horaires_vacances_ete": "8h \u00e0 16h", "adresse": "11 rue de la Montagne d'Aulas", "site": "Gymnase C\u00e9vennes", "annee_installation": "2008/2009", "acces": "Int\u00e9rieur", "geo_coordinates": [48.840328, 2.279085], "adresse_complete": "11 rue de la Montagne d'Aulas 75015 Paris  France", "arrond": 75015, "horaires_normal": "7h \u00e0 22h30"}, "geometry": {"type": "Point", "coordinates": [2.279085, 48.840328]}, "record_timestamp": "2014-08-13T20:24:04.556853"},{"datasetid": "distributeurspreservatifsmasculinsparis2012", "recordid": "a98c921c3dc6d78c3bc37f1489de28a67ce47a30", "fields": {"horaires_vacances_hiver": "8h \u00e0 21h30", "horaires_vacances_ete": "8h \u00e0 21h", "adresse": "28 rue Andr\u00e9 Br\u00e9chet", "site": "Centre sportif Max Rousi\u00e9", "annee_installation": "2008/2009", "acces": "Int\u00e9rieur", "geo_coordinates": [48.88387, 2.31863], "adresse_complete": "28 rue Andr\u00e9 Br\u00e9chet 75017 Paris  France", "arrond": 75017, "horaires_normal": "8h \u00e0 21h30"}, "geometry": {"type": "Point", "coordinates": [2.31863, 48.88387]}, "record_timestamp": "2014-08-13T20:24:04.556853"},{"datasetid": "distributeurspreservatifsmasculinsparis2012", "recordid": "e9bcecd763f197dcb10ce0b2bc416ac6de887891", "fields": {"horaires_vacances_hiver": "ferm\u00e9", "horaires_vacances_ete": "8h \u00e0 17h", "adresse": "87 Av J.Jaur\u00e8s", "site": "Gymnase Jean Jaur\u00e8s", "annee_installation": "2008/2009", "acces": "Int\u00e9rieur", "geo_coordinates": [48.88237, 2.38225], "adresse_complete": "87 Av J.Jaur\u00e8s 75019 Paris  France", "arrond": 75019, "horaires_normal": "7h \u00e0 22h30"}, "geometry": {"type": "Point", "coordinates": [2.38225, 48.88237]}, "record_timestamp": "2014-08-13T20:24:04.556853"},{"datasetid": "distributeurspreservatifsmasculinsparis2012", "recordid": "a6dd1fb4437a5c223b5d6eb69417bff897c13c12", "fields": {"horaires_vacances_hiver": "10h \u00e0 18h", "horaires_vacances_ete": "10h \u00e0 18h", "adresse": "101 Quai Branly", "site": "Kiosque jeunes Champ de Mars", "annee_installation": "2010", "acces": "Int\u00e9rieur", "geo_coordinates": [48.85494, 2.289272], "adresse_complete": "101 Quai Branly 75015 Paris  France", "arrond": 75015, "horaires_normal": "10h \u00e0 18h"}, "geometry": {"type": "Point", "coordinates": [2.289272, 48.85494]}, "record_timestamp": "2014-08-13T20:24:04.556853"},{"datasetid": "distributeurspreservatifsmasculinsparis2012", "recordid": "73778c1e6cb261b2e32ab8c3c6adff776d0bec90", "fields": {"horaires_vacances_hiver": "14h \u00e0 19h", "horaires_vacances_ete": "14h \u00e0 19h", "adresse": "49 ter Av de Flandre", "site": "Antenne jeunes Flandre", "annee_installation": "2010", "acces": "Int\u00e9rieur", "geo_coordinates": [48.887047, 2.372123], "adresse_complete": "49 ter Av de Flandre 75019 Paris  France", "arrond": 75019}, "geometry": {"type": "Point", "coordinates": [2.372123, 48.887047]}, "record_timestamp": "2014-08-13T20:24:04.556853"},{"datasetid": "distributeurspreservatifsmasculinsparis2012", "recordid": "8e55ce27d5225722da93598d894b73343284ffa2", "fields": {"horaires_vacances_hiver": "10h \u00e0 17h", "horaires_vacances_ete": "10h \u00e0 18h", "adresse": "181/183 rue de Vercing\u00e9torix", "site": "Centre d'animation Vercing\u00e9torix", "annee_installation": "2010", "acces": "Int\u00e9rieur", "geo_coordinates": [48.831535, 2.309606], "adresse_complete": "181/183 rue de Vercing\u00e9torix 75014 Paris  France", "arrond": 75014, "horaires_normal": "10h \u00e0 18h"}, "geometry": {"type": "Point", "coordinates": [2.309606, 48.831535]}, "record_timestamp": "2014-08-13T20:24:04.556853"},{"datasetid": "distributeurspreservatifsmasculinsparis2012", "recordid": "99b78caff40cf93c6ee7fa98b6fb2eb74a687c86", "fields": {"horaires_vacances_hiver": "14h \u00e0 21h", "adresse": "6 rue de la Goutte d'Or", "site": "Espace jeunes Goutte D'Or", "annee_installation": "2010", "acces": "Int\u00e9rieur", "geo_coordinates": [48.884987, 2.354645], "adresse_complete": "6 rue de la Goutte d'Or 75018 Paris  France", "arrond": 75018, "horaires_normal": "14h \u00e0 21h"}, "geometry": {"type": "Point", "coordinates": [2.354645, 48.884987]}, "record_timestamp": "2014-08-13T20:24:04.556853"},{"datasetid": "distributeurspreservatifsmasculinsparis2012", "recordid": "9d8f135a2aee4ee77e2d12b2d2b62ea992364d1d", "fields": {"horaires_vacances_hiver": "14h \u00e0 19h", "horaires_vacances_ete": "14h \u00e0 19h", "adresse": "1 rue Pauline Kergomard", "site": "Espace jeunes St Blaise", "annee_installation": "2010", "acces": "Int\u00e9rieur", "geo_coordinates": [48.854988, 2.407303], "adresse_complete": "1 rue Pauline Kergomard 75020 Paris  France", "arrond": 75020, "horaires_normal": "10h30 \u00e0 19h"}, "geometry": {"type": "Point", "coordinates": [2.407303, 48.854988]}, "record_timestamp": "2014-08-13T20:24:04.556853"},{"datasetid": "distributeurspreservatifsmasculinsparis2012", "recordid": "cd194f433267315580b4d130536b3bc2bcf3407a", "fields": {"horaires_vacances_hiver": "9h \u00e0 22h30", "horaires_vacances_ete": "9h \u00e0 21h", "adresse": "17 rue Boy-Zelenski", "site": "Centre sportif Grange aux belles", "annee_installation": "2008/2009", "acces": "Int\u00e9rieur", "geo_coordinates": [48.877355, 2.368197], "adresse_complete": "17 rue Boy-Zelenski 75010 Paris  France", "arrond": 75010, "horaires_normal": "8h \u00e0 22h30"}, "geometry": {"type": "Point", "coordinates": [2.368197, 48.877355]}, "record_timestamp": "2014-08-13T20:24:04.556853"},{"datasetid": "distributeurspreservatifsmasculinsparis2012", "recordid": "e71aab3a8edaf2cc7eed8248f6897f3bca51c929", "fields": {"horaires_vacances_hiver": "13h \u00e0 22h30", "adresse": "5 rue du docteur Bourneville", "site": "Centre sportif Bourneville", "annee_installation": "2008/2009", "acces": "Int\u00e9rieur", "geo_coordinates": [48.817942, 2.359162], "adresse_complete": "5 rue du docteur Bourneville 75013 Paris  France", "arrond": 75013, "horaires_normal": "7h \u00e0 22h30"}, "geometry": {"type": "Point", "coordinates": [2.359162, 48.817942]}, "record_timestamp": "2014-08-13T20:24:04.556853"},{"datasetid": "distributeurspreservatifsmasculinsparis2012", "recordid": "7068f2990b5d353677996a303f2c1b5ce1db2967", "fields": {"horaires_vacances_hiver": "8h \u00e0 22h", "horaires_vacances_ete": "8h \u00e0 22h", "adresse": "81 Bd Mass\u00e9na", "site": "Centre sportif Georges Carpentier", "annee_installation": "2008/2009", "acces": "Int\u00e9rieur", "geo_coordinates": [48.82046, 2.366898], "adresse_complete": "81 Bd Mass\u00e9na 75013 Paris  France", "arrond": 75013, "horaires_normal": "8h \u00e0 22h"}, "geometry": {"type": "Point", "coordinates": [2.366898, 48.82046]}, "record_timestamp": "2014-08-13T20:24:04.556853"},{"datasetid": "distributeurspreservatifsmasculinsparis2012", "recordid": "77ba89a793cecfc16aed4ddf5b2de63edd58d4fd", "fields": {"horaires_vacances_hiver": "8h \u00e0 18h", "horaires_vacances_ete": "9h \u00e0 17h30", "adresse": "10-12 passage de la Goutte d'Or", "site": "Centre sportif Goutte d'Or", "annee_installation": "2008/2009", "acces": "Int\u00e9rieur", "geo_coordinates": [48.884988, 2.354328], "adresse_complete": "10-12 passage de la Goutte d'Or 75018 Paris  France", "arrond": 75018, "horaires_normal": "7h \u00e0 22h30"}, "geometry": {"type": "Point", "coordinates": [2.354328, 48.884988]}, "record_timestamp": "2014-08-13T20:24:04.556853"},{"datasetid": "distributeurspreservatifsmasculinsparis2012", "recordid": "ce31b9ffacdc1aff07166facdb2d147ab254a5b3", "fields": {"adresse": "43 rue de l'Orillon", "site": "Antenne jeunes Orillon", "annee_installation": "2010", "acces": "Ext\u00e9rieur", "geo_coordinates": [48.870536, 2.377394], "adresse_complete": "43 rue de l'Orillon 75011 Paris  France", "arrond": 75011}, "geometry": {"type": "Point", "coordinates": [2.377394, 48.870536]}, "record_timestamp": "2014-08-13T20:24:04.556853"},{"datasetid": "distributeurspreservatifsmasculinsparis2012", "recordid": "c277c813942218deebf05af8ccb0965ebf2e8da9", "fields": {"horaires_vacances_hiver": "7h \u00e0 22h30", "horaires_vacances_ete": "7h \u00e0 14h", "adresse": "6 Place Bernard Halphen", "site": "Gymnase Patriarches", "annee_installation": "2008/2009", "acces": "Int\u00e9rieur", "geo_coordinates": [48.840253, 2.350677], "adresse_complete": "6 Place Bernard Halphen 75005 Paris  France", "arrond": 75005, "horaires_normal": "7h \u00e0 22h30"}, "geometry": {"type": "Point", "coordinates": [2.350677, 48.840253]}, "record_timestamp": "2014-08-13T20:24:04.556853"},{"datasetid": "distributeurspreservatifsmasculinsparis2012", "recordid": "69d165beaf5ddbce8e6803dd7625139ee1477223", "fields": {"horaires_vacances_hiver": "9h \u00e0 22h30", "horaires_vacances_ete": "7h \u00e0 15h", "adresse": "26 rue Buffault", "site": "Gymnase Buffault", "annee_installation": "2008/2009", "acces": "Int\u00e9rieur", "geo_coordinates": [48.875976, 2.342156], "adresse_complete": "26 rue Buffault 75009 Paris  France", "arrond": 75009, "horaires_normal": "9h \u00e0 22h30"}, "geometry": {"type": "Point", "coordinates": [2.342156, 48.875976]}, "record_timestamp": "2014-08-13T20:24:04.556853"},{"datasetid": "distributeurspreservatifsmasculinsparis2012", "recordid": "5a136d499d359f0e0fdedf38c58e123ad9ab166a", "fields": {"horaires_vacances_hiver": "8h \u00e0 22h", "horaires_vacances_ete": "8h \u00e0 22h", "adresse": "15 rue de la Nouvelle Cal\u00e9donie", "site": "Centre spotif Paul Val\u00e9ry", "annee_installation": "2008/2009", "acces": "Int\u00e9rieur", "geo_coordinates": [48.837933, 2.410282], "adresse_complete": "15 rue de la Nouvelle Cal\u00e9donie 75012 Paris  France", "arrond": 75012, "horaires_normal": "8h \u00e0 22h"}, "geometry": {"type": "Point", "coordinates": [2.410282, 48.837933]}, "record_timestamp": "2014-08-13T20:24:04.556853"},{"datasetid": "distributeurspreservatifsmasculinsparis2012", "recordid": "845c14a9cfa8e89bae0c699dadae15c54de362ba", "fields": {"horaires_vacances_hiver": "8h \u00e0 22h30", "horaires_vacances_ete": "8h \u00e0 22h", "adresse": "7-15 Av Paul Appell", "site": "Centre sportif Elisabeth", "annee_installation": "2008/2009", "acces": "Int\u00e9rieur", "geo_coordinates": [48.821232, 2.328912], "adresse_complete": "7-15 Av Paul Appell 75014 Paris  France", "arrond": 75014, "horaires_normal": "8h \u00e0 22h30"}, "geometry": {"type": "Point", "coordinates": [2.328912, 48.821232]}, "record_timestamp": "2014-08-13T20:24:04.556853"},{"datasetid": "distributeurspreservatifsmasculinsparis2012", "recordid": "0b2b93317a1bb6f343c5d19b0101cb7a722c7776", "fields": {"horaires_vacances_hiver": "9h \u00e0 22h", "horaires_vacances_ete": "10h \u00e0 19h", "adresse": "116 Quai de Jemmapes", "site": "Centre d'animation Jemmapes", "annee_installation": "2010", "acces": "Int\u00e9rieur", "geo_coordinates": [48.874772, 2.363661], "adresse_complete": "116 Quai de Jemmapes 75010 Paris  France", "arrond": 75010, "horaires_normal": "9h \u00e0 22h"}, "geometry": {"type": "Point", "coordinates": [2.363661, 48.874772]}, "record_timestamp": "2014-08-13T20:24:04.556853"},{"datasetid": "distributeurspreservatifsmasculinsparis2012", "recordid": "a0ce0443ed2d5ac298a1c040e43a693323074f85", "fields": {"horaires_vacances_hiver": "ferm\u00e9", "adresse": "2/4 rue des Lilas", "site": "Centre d'animation Place des F\u00eates", "annee_installation": "2010", "acces": "Int\u00e9rieur", "geo_coordinates": [48.877801, 2.395497], "adresse_complete": "2/4 rue des Lilas 75019 Paris  France", "arrond": 75019, "horaires_normal": "11h \u00e0 22h"}, "geometry": {"type": "Point", "coordinates": [2.395497, 48.877801]}, "record_timestamp": "2014-08-13T20:24:04.556853"},{"datasetid": "distributeurspreservatifsmasculinsparis2012", "recordid": "3752a4d3b50f420f345723a8015f8828a954047d", "fields": {"horaires_vacances_hiver": "8h \u00e0 22h", "horaires_vacances_ete": "8h \u00e0 22h", "adresse": "5-7 rue Neuve St Pierre", "site": "TEP Neuve St Pierre", "annee_installation": "2008/2009", "acces": "Int\u00e9rieur", "geo_coordinates": [48.853622, 2.36381], "adresse_complete": "5-7 rue Neuve St Pierre 75004 Paris  France", "arrond": 75004, "horaires_normal": "8h \u00e0 22h"}, "geometry": {"type": "Point", "coordinates": [2.36381, 48.853622]}, "record_timestamp": "2014-08-13T20:24:04.556853"},{"datasetid": "distributeurspreservatifsmasculinsparis2012", "recordid": "a28ae5db054c6b3d45bfe3f66404379a81f2e07f", "fields": {"horaires_vacances_hiver": "ferm\u00e9", "horaires_vacances_ete": "7h \u00e0 16h", "adresse": "2 rue Jappy", "site": "Gymnase Japy", "annee_installation": "2008/2009", "acces": "Int\u00e9rieur", "geo_coordinates": [48.855888, 2.382548], "adresse_complete": "2 rue Jappy 75011 Paris  France", "arrond": 75011}, "geometry": {"type": "Point", "coordinates": [2.382548, 48.855888]}, "record_timestamp": "2014-08-13T20:24:04.556853"},{"datasetid": "distributeurspreservatifsmasculinsparis2012", "recordid": "fab8b89754d57b6d0aa24763848f43c05b2f5b35", "fields": {"horaires_vacances_hiver": "7h \u00e0 22h30", "horaires_vacances_ete": "7h \u00e0 22h", "adresse": "18 Av de la Porte de Brancion", "site": "Centre sportif Rigoulot", "annee_installation": "2008/2009", "acces": "Int\u00e9rieur", "geo_coordinates": [48.826643, 2.300662], "adresse_complete": "18 Av de la Porte de Brancion 75015 Paris  France", "arrond": 75015, "horaires_normal": "7h \u00e0 22h30"}, "geometry": {"type": "Point", "coordinates": [2.300662, 48.826643]}, "record_timestamp": "2014-08-13T20:24:04.556853"},{"datasetid": "distributeurspreservatifsmasculinsparis2012", "recordid": "423952dbed120344f4847c79666e067f33435da5", "fields": {"horaires_vacances_hiver": "8h \u00e0 22h", "horaires_vacances_ete": "7h \u00e0 20h", "adresse": "Place de la Porte de Pantin", "site": "Centre sportif Jules Ladoum\u00e8gue", "annee_installation": "2008/2009", "acces": "Int\u00e9rieur", "geo_coordinates": [48.889565, 2.395229], "adresse_complete": "Place de la Porte de Pantin 75019 Paris  France", "arrond": 75019, "horaires_normal": "8h \u00e0 22h"}, "geometry": {"type": "Point", "coordinates": [2.395229, 48.889565]}, "record_timestamp": "2014-08-13T20:24:04.556853"}]
+[
+    {
+        "datasetid": "distributeurspreservatifsmasculinsparis2012",
+        "recordid": "473e8d17b95ff99c532a41139a401ce929af4586",
+        "fields": {
+            "horaires_vacances_hiver": "ferm\u00e9",
+            "horaires_vacances_ete": "8h \u00e0 18h",
+            "adresse": "56 Bd de l'Amiral Bruix",
+            "site": "Stade Jean Pierre Wimille",
+            "annee_installation": "2008/2009",
+            "acces": "Int\u00e9rieur",
+            "geo_coordinates": [48.872568, 2.275998],
+            "adresse_complete": "56 Bd de l'Amiral Bruix 75016 Paris  France",
+            "arrond": 75016,
+            "horaires_normal": "7h \u00e0 22h30"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [2.275998, 48.872568]
+        },
+        "record_timestamp": "2014-08-13T20:24:04.556853"
+    },
+    {
+        "datasetid": "distributeurspreservatifsmasculinsparis2012",
+        "recordid": "a2d06e9c76efbba258b040bdb6ba18916d0df995",
+        "fields": {
+            "adresse": "2 rue Jean Cocteau",
+            "site": "Centre sportif Poissonniers",
+            "annee_installation": "2008/2009",
+            "acces": "Ext\u00e9rieur",
+            "geo_coordinates": [48.899628, 2.351833],
+            "adresse_complete": "2 rue Jean Cocteau 75018 Paris  France",
+            "arrond": 75018
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [2.351833, 48.899628]
+        },
+        "record_timestamp": "2014-08-13T20:24:04.556853"
+    },
+    {
+        "datasetid": "distributeurspreservatifsmasculinsparis2012",
+        "recordid": "90460728f9dcc0c2e40f2531037b4c322b5fefa8",
+        "fields": {
+            "horaires_vacances_hiver": "ferm\u00e9",
+            "adresse": "34 rue des docteurs D\u00e9j\u00e9rine",
+            "site": "Centre sportif D\u00e9j\u00e9rine",
+            "annee_installation": "2008/2009",
+            "acces": "Int\u00e9rieur",
+            "geo_coordinates": [48.856795, 2.411563],
+            "adresse_complete": "34 rue des docteurs D\u00e9j\u00e9rine 75020 Paris  France",
+            "arrond": 75020
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [2.411563, 48.856795]
+        },
+        "record_timestamp": "2014-08-13T20:24:04.556853"
+    },
+    {
+        "datasetid": "distributeurspreservatifsmasculinsparis2012",
+        "recordid": "1073ed89c38b4512f088b312b7aafa07634e6b3a",
+        "fields": {
+            "horaires_vacances_hiver": "ferm\u00e9",
+            "adresse": "1 rue Fleury Centre Musical",
+            "site": "Kiosque jeunes Goutte D'Or",
+            "annee_installation": "2010",
+            "acces": "Int\u00e9rieur",
+            "geo_coordinates": [48.89247, 2.34463],
+            "adresse_complete": "1 rue Fleury Centre Musical 75018 Paris  France",
+            "arrond": 75018
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [2.34463, 48.89247]
+        },
+        "record_timestamp": "2014-08-13T20:24:04.556853"
+    },
+    {
+        "datasetid": "distributeurspreservatifsmasculinsparis2012",
+        "recordid": "d6ab02af577dd79ac561f34e74ebe70ae2d92e4d",
+        "fields": {
+            "adresse": "32 rue du Javelot Tour Anvers",
+            "site": "Antenne jeunes Olympiades",
+            "annee_installation": "2010",
+            "acces": "Ext\u00e9rieur",
+            "geo_coordinates": [48.824405, 2.365686],
+            "adresse_complete": "32 rue du Javelot Tour Anvers 75013 Paris  France",
+            "arrond": 75013
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [2.365686, 48.824405]
+        },
+        "record_timestamp": "2014-08-13T20:24:04.556853"
+    },
+    {
+        "datasetid": "distributeurspreservatifsmasculinsparis2012",
+        "recordid": "b2a4d390c013fae1fec3d15b4775110030c3ef08",
+        "fields": {
+            "horaires_vacances_hiver": "10h \u00e0 20h",
+            "adresse": "54 Bd Ney",
+            "site": "Espace jeunes Charles Hermitte",
+            "annee_installation": "2010",
+            "acces": "Int\u00e9rieur",
+            "geo_coordinates": [48.898551, 2.363065],
+            "adresse_complete": "54 Bd Ney 75018 Paris  France",
+            "arrond": 75018,
+            "horaires_normal": "10h \u00e0 20h"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [2.363065, 48.898551]
+        },
+        "record_timestamp": "2014-08-13T20:24:04.556853"
+    },
+    {
+        "datasetid": "distributeurspreservatifsmasculinsparis2012",
+        "recordid": "7185e8ff8e457956a1e26448536378510b0c96d8",
+        "fields": {
+            "horaires_vacances_hiver": "8h \u00e0 17h",
+            "horaires_vacances_ete": "8h \u00e0 21h",
+            "adresse": "68 Bd Poniatowsky",
+            "site": "Centre sportif L\u00e9o Lagrange",
+            "annee_installation": "2008/2009",
+            "acces": "Int\u00e9rieur",
+            "geo_coordinates": [48.832304, 2.399533],
+            "adresse_complete": "68 Bd Poniatowsky 75012 Paris  France",
+            "arrond": 75012,
+            "horaires_normal": "8h \u00e0 22h"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [2.399533, 48.832304]
+        },
+        "record_timestamp": "2014-08-13T20:24:04.556853"
+    },
+    {
+        "datasetid": "distributeurspreservatifsmasculinsparis2012",
+        "recordid": "0b4904ffa57d9c8827d5a453b4baef8dd7aacb0c",
+        "fields": {
+            "horaires_vacances_hiver": "9h \u00e0 22h30",
+            "horaires_vacances_ete": "8h \u00e0 22h",
+            "adresse": "3 Av Maurice D'Ocagne",
+            "site": "Centre sportif Jules No\u00ebl",
+            "annee_installation": "2008/2009",
+            "acces": "Int\u00e9rieur",
+            "geo_coordinates": [48.824199, 2.315428],
+            "adresse_complete": "3 Av Maurice D'Ocagne 75014 Paris  France",
+            "arrond": 75014,
+            "horaires_normal": "8h \u00e0 22h30"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [2.315428, 48.824199]
+        },
+        "record_timestamp": "2014-08-13T20:24:04.556853"
+    },
+    {
+        "datasetid": "distributeurspreservatifsmasculinsparis2012",
+        "recordid": "a16ba03b9f06369c543e988902d1052633b5a08b",
+        "fields": {
+            "horaires_vacances_hiver": "7h \u00e0 19h",
+            "horaires_vacances_ete": "8h \u00e0 16h",
+            "adresse": "11 rue de la Montagne d'Aulas",
+            "site": "Gymnase C\u00e9vennes",
+            "annee_installation": "2008/2009",
+            "acces": "Int\u00e9rieur",
+            "geo_coordinates": [48.840328, 2.279085],
+            "adresse_complete": "11 rue de la Montagne d'Aulas 75015 Paris  France",
+            "arrond": 75015,
+            "horaires_normal": "7h \u00e0 22h30"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [2.279085, 48.840328]
+        },
+        "record_timestamp": "2014-08-13T20:24:04.556853"
+    },
+    {
+        "datasetid": "distributeurspreservatifsmasculinsparis2012",
+        "recordid": "a98c921c3dc6d78c3bc37f1489de28a67ce47a30",
+        "fields": {
+            "horaires_vacances_hiver": "8h \u00e0 21h30",
+            "horaires_vacances_ete": "8h \u00e0 21h",
+            "adresse": "28 rue Andr\u00e9 Br\u00e9chet",
+            "site": "Centre sportif Max Rousi\u00e9",
+            "annee_installation": "2008/2009",
+            "acces": "Int\u00e9rieur",
+            "geo_coordinates": [48.88387, 2.31863],
+            "adresse_complete": "28 rue Andr\u00e9 Br\u00e9chet 75017 Paris  France",
+            "arrond": 75017,
+            "horaires_normal": "8h \u00e0 21h30"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [2.31863, 48.88387]
+        },
+        "record_timestamp": "2014-08-13T20:24:04.556853"
+    },
+    {
+        "datasetid": "distributeurspreservatifsmasculinsparis2012",
+        "recordid": "e9bcecd763f197dcb10ce0b2bc416ac6de887891",
+        "fields": {
+            "horaires_vacances_hiver": "ferm\u00e9",
+            "horaires_vacances_ete": "8h \u00e0 17h",
+            "adresse": "87 Av J.Jaur\u00e8s",
+            "site": "Gymnase Jean Jaur\u00e8s",
+            "annee_installation": "2008/2009",
+            "acces": "Int\u00e9rieur",
+            "geo_coordinates": [48.88237, 2.38225],
+            "adresse_complete": "87 Av J.Jaur\u00e8s 75019 Paris  France",
+            "arrond": 75019,
+            "horaires_normal": "7h \u00e0 22h30"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [2.38225, 48.88237]
+        },
+        "record_timestamp": "2014-08-13T20:24:04.556853"
+    },
+    {
+        "datasetid": "distributeurspreservatifsmasculinsparis2012",
+        "recordid": "a6dd1fb4437a5c223b5d6eb69417bff897c13c12",
+        "fields": {
+            "horaires_vacances_hiver": "10h \u00e0 18h",
+            "horaires_vacances_ete": "10h \u00e0 18h",
+            "adresse": "101 Quai Branly",
+            "site": "Kiosque jeunes Champ de Mars",
+            "annee_installation": "2010",
+            "acces": "Int\u00e9rieur",
+            "geo_coordinates": [48.85494, 2.289272],
+            "adresse_complete": "101 Quai Branly 75015 Paris  France",
+            "arrond": 75015,
+            "horaires_normal": "10h \u00e0 18h"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [2.289272, 48.85494]
+        },
+        "record_timestamp": "2014-08-13T20:24:04.556853"
+    },
+    {
+        "datasetid": "distributeurspreservatifsmasculinsparis2012",
+        "recordid": "73778c1e6cb261b2e32ab8c3c6adff776d0bec90",
+        "fields": {
+            "horaires_vacances_hiver": "14h \u00e0 19h",
+            "horaires_vacances_ete": "14h \u00e0 19h",
+            "adresse": "49 ter Av de Flandre",
+            "site": "Antenne jeunes Flandre",
+            "annee_installation": "2010",
+            "acces": "Int\u00e9rieur",
+            "geo_coordinates": [48.887047, 2.372123],
+            "adresse_complete": "49 ter Av de Flandre 75019 Paris  France",
+            "arrond": 75019
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [2.372123, 48.887047]
+        },
+        "record_timestamp": "2014-08-13T20:24:04.556853"
+    },
+    {
+        "datasetid": "distributeurspreservatifsmasculinsparis2012",
+        "recordid": "8e55ce27d5225722da93598d894b73343284ffa2",
+        "fields": {
+            "horaires_vacances_hiver": "10h \u00e0 17h",
+            "horaires_vacances_ete": "10h \u00e0 18h",
+            "adresse": "181/183 rue de Vercing\u00e9torix",
+            "site": "Centre d'animation Vercing\u00e9torix",
+            "annee_installation": "2010",
+            "acces": "Int\u00e9rieur",
+            "geo_coordinates": [48.831535, 2.309606],
+            "adresse_complete": "181/183 rue de Vercing\u00e9torix 75014 Paris  France",
+            "arrond": 75014,
+            "horaires_normal": "10h \u00e0 18h"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [2.309606, 48.831535]
+        },
+        "record_timestamp": "2014-08-13T20:24:04.556853"
+    },
+    {
+        "datasetid": "distributeurspreservatifsmasculinsparis2012",
+        "recordid": "99b78caff40cf93c6ee7fa98b6fb2eb74a687c86",
+        "fields": {
+            "horaires_vacances_hiver": "14h \u00e0 21h",
+            "adresse": "6 rue de la Goutte d'Or",
+            "site": "Espace jeunes Goutte D'Or",
+            "annee_installation": "2010",
+            "acces": "Int\u00e9rieur",
+            "geo_coordinates": [48.884987, 2.354645],
+            "adresse_complete": "6 rue de la Goutte d'Or 75018 Paris  France",
+            "arrond": 75018,
+            "horaires_normal": "14h \u00e0 21h"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [2.354645, 48.884987]
+        },
+        "record_timestamp": "2014-08-13T20:24:04.556853"
+    },
+    {
+        "datasetid": "distributeurspreservatifsmasculinsparis2012",
+        "recordid": "9d8f135a2aee4ee77e2d12b2d2b62ea992364d1d",
+        "fields": {
+            "horaires_vacances_hiver": "14h \u00e0 19h",
+            "horaires_vacances_ete": "14h \u00e0 19h",
+            "adresse": "1 rue Pauline Kergomard",
+            "site": "Espace jeunes St Blaise",
+            "annee_installation": "2010",
+            "acces": "Int\u00e9rieur",
+            "geo_coordinates": [48.854988, 2.407303],
+            "adresse_complete": "1 rue Pauline Kergomard 75020 Paris  France",
+            "arrond": 75020,
+            "horaires_normal": "10h30 \u00e0 19h"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [2.407303, 48.854988]
+        },
+        "record_timestamp": "2014-08-13T20:24:04.556853"
+    },
+    {
+        "datasetid": "distributeurspreservatifsmasculinsparis2012",
+        "recordid": "cd194f433267315580b4d130536b3bc2bcf3407a",
+        "fields": {
+            "horaires_vacances_hiver": "9h \u00e0 22h30",
+            "horaires_vacances_ete": "9h \u00e0 21h",
+            "adresse": "17 rue Boy-Zelenski",
+            "site": "Centre sportif Grange aux belles",
+            "annee_installation": "2008/2009",
+            "acces": "Int\u00e9rieur",
+            "geo_coordinates": [48.877355, 2.368197],
+            "adresse_complete": "17 rue Boy-Zelenski 75010 Paris  France",
+            "arrond": 75010,
+            "horaires_normal": "8h \u00e0 22h30"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [2.368197, 48.877355]
+        },
+        "record_timestamp": "2014-08-13T20:24:04.556853"
+    },
+    {
+        "datasetid": "distributeurspreservatifsmasculinsparis2012",
+        "recordid": "e71aab3a8edaf2cc7eed8248f6897f3bca51c929",
+        "fields": {
+            "horaires_vacances_hiver": "13h \u00e0 22h30",
+            "adresse": "5 rue du docteur Bourneville",
+            "site": "Centre sportif Bourneville",
+            "annee_installation": "2008/2009",
+            "acces": "Int\u00e9rieur",
+            "geo_coordinates": [48.817942, 2.359162],
+            "adresse_complete": "5 rue du docteur Bourneville 75013 Paris  France",
+            "arrond": 75013,
+            "horaires_normal": "7h \u00e0 22h30"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [2.359162, 48.817942]
+        },
+        "record_timestamp": "2014-08-13T20:24:04.556853"
+    },
+    {
+        "datasetid": "distributeurspreservatifsmasculinsparis2012",
+        "recordid": "7068f2990b5d353677996a303f2c1b5ce1db2967",
+        "fields": {
+            "horaires_vacances_hiver": "8h \u00e0 22h",
+            "horaires_vacances_ete": "8h \u00e0 22h",
+            "adresse": "81 Bd Mass\u00e9na",
+            "site": "Centre sportif Georges Carpentier",
+            "annee_installation": "2008/2009",
+            "acces": "Int\u00e9rieur",
+            "geo_coordinates": [48.82046, 2.366898],
+            "adresse_complete": "81 Bd Mass\u00e9na 75013 Paris  France",
+            "arrond": 75013,
+            "horaires_normal": "8h \u00e0 22h"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [2.366898, 48.82046]
+        },
+        "record_timestamp": "2014-08-13T20:24:04.556853"
+    },
+    {
+        "datasetid": "distributeurspreservatifsmasculinsparis2012",
+        "recordid": "77ba89a793cecfc16aed4ddf5b2de63edd58d4fd",
+        "fields": {
+            "horaires_vacances_hiver": "8h \u00e0 18h",
+            "horaires_vacances_ete": "9h \u00e0 17h30",
+            "adresse": "10-12 passage de la Goutte d'Or",
+            "site": "Centre sportif Goutte d'Or",
+            "annee_installation": "2008/2009",
+            "acces": "Int\u00e9rieur",
+            "geo_coordinates": [48.884988, 2.354328],
+            "adresse_complete": "10-12 passage de la Goutte d'Or 75018 Paris  France",
+            "arrond": 75018,
+            "horaires_normal": "7h \u00e0 22h30"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [2.354328, 48.884988]
+        },
+        "record_timestamp": "2014-08-13T20:24:04.556853"
+    },
+    {
+        "datasetid": "distributeurspreservatifsmasculinsparis2012",
+        "recordid": "ce31b9ffacdc1aff07166facdb2d147ab254a5b3",
+        "fields": {
+            "adresse": "43 rue de l'Orillon",
+            "site": "Antenne jeunes Orillon",
+            "annee_installation": "2010",
+            "acces": "Ext\u00e9rieur",
+            "geo_coordinates": [48.870536, 2.377394],
+            "adresse_complete": "43 rue de l'Orillon 75011 Paris  France",
+            "arrond": 75011
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [2.377394, 48.870536]
+        },
+        "record_timestamp": "2014-08-13T20:24:04.556853"
+    },
+    {
+        "datasetid": "distributeurspreservatifsmasculinsparis2012",
+        "recordid": "c277c813942218deebf05af8ccb0965ebf2e8da9",
+        "fields": {
+            "horaires_vacances_hiver": "7h \u00e0 22h30",
+            "horaires_vacances_ete": "7h \u00e0 14h",
+            "adresse": "6 Place Bernard Halphen",
+            "site": "Gymnase Patriarches",
+            "annee_installation": "2008/2009",
+            "acces": "Int\u00e9rieur",
+            "geo_coordinates": [48.840253, 2.350677],
+            "adresse_complete": "6 Place Bernard Halphen 75005 Paris  France",
+            "arrond": 75005,
+            "horaires_normal": "7h \u00e0 22h30"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [2.350677, 48.840253]
+        },
+        "record_timestamp": "2014-08-13T20:24:04.556853"
+    },
+    {
+        "datasetid": "distributeurspreservatifsmasculinsparis2012",
+        "recordid": "69d165beaf5ddbce8e6803dd7625139ee1477223",
+        "fields": {
+            "horaires_vacances_hiver": "9h \u00e0 22h30",
+            "horaires_vacances_ete": "7h \u00e0 15h",
+            "adresse": "26 rue Buffault",
+            "site": "Gymnase Buffault",
+            "annee_installation": "2008/2009",
+            "acces": "Int\u00e9rieur",
+            "geo_coordinates": [48.875976, 2.342156],
+            "adresse_complete": "26 rue Buffault 75009 Paris  France",
+            "arrond": 75009,
+            "horaires_normal": "9h \u00e0 22h30"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [2.342156, 48.875976]
+        },
+        "record_timestamp": "2014-08-13T20:24:04.556853"
+    },
+    {
+        "datasetid": "distributeurspreservatifsmasculinsparis2012",
+        "recordid": "5a136d499d359f0e0fdedf38c58e123ad9ab166a",
+        "fields": {
+            "horaires_vacances_hiver": "8h \u00e0 22h",
+            "horaires_vacances_ete": "8h \u00e0 22h",
+            "adresse": "15 rue de la Nouvelle Cal\u00e9donie",
+            "site": "Centre spotif Paul Val\u00e9ry",
+            "annee_installation": "2008/2009",
+            "acces": "Int\u00e9rieur",
+            "geo_coordinates": [48.837933, 2.410282],
+            "adresse_complete": "15 rue de la Nouvelle Cal\u00e9donie 75012 Paris  France",
+            "arrond": 75012,
+            "horaires_normal": "8h \u00e0 22h"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [2.410282, 48.837933]
+        },
+        "record_timestamp": "2014-08-13T20:24:04.556853"
+    },
+    {
+        "datasetid": "distributeurspreservatifsmasculinsparis2012",
+        "recordid": "845c14a9cfa8e89bae0c699dadae15c54de362ba",
+        "fields": {
+            "horaires_vacances_hiver": "8h \u00e0 22h30",
+            "horaires_vacances_ete": "8h \u00e0 22h",
+            "adresse": "7-15 Av Paul Appell",
+            "site": "Centre sportif Elisabeth",
+            "annee_installation": "2008/2009",
+            "acces": "Int\u00e9rieur",
+            "geo_coordinates": [48.821232, 2.328912],
+            "adresse_complete": "7-15 Av Paul Appell 75014 Paris  France",
+            "arrond": 75014,
+            "horaires_normal": "8h \u00e0 22h30"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [2.328912, 48.821232]
+        },
+        "record_timestamp": "2014-08-13T20:24:04.556853"
+    },
+    {
+        "datasetid": "distributeurspreservatifsmasculinsparis2012",
+        "recordid": "0b2b93317a1bb6f343c5d19b0101cb7a722c7776",
+        "fields": {
+            "horaires_vacances_hiver": "9h \u00e0 22h",
+            "horaires_vacances_ete": "10h \u00e0 19h",
+            "adresse": "116 Quai de Jemmapes",
+            "site": "Centre d'animation Jemmapes",
+            "annee_installation": "2010",
+            "acces": "Int\u00e9rieur",
+            "geo_coordinates": [48.874772, 2.363661],
+            "adresse_complete": "116 Quai de Jemmapes 75010 Paris  France",
+            "arrond": 75010,
+            "horaires_normal": "9h \u00e0 22h"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [2.363661, 48.874772]
+        },
+        "record_timestamp": "2014-08-13T20:24:04.556853"
+    },
+    {
+        "datasetid": "distributeurspreservatifsmasculinsparis2012",
+        "recordid": "a0ce0443ed2d5ac298a1c040e43a693323074f85",
+        "fields": {
+            "horaires_vacances_hiver": "ferm\u00e9",
+            "adresse": "2/4 rue des Lilas",
+            "site": "Centre d'animation Place des F\u00eates",
+            "annee_installation": "2010",
+            "acces": "Int\u00e9rieur",
+            "geo_coordinates": [48.877801, 2.395497],
+            "adresse_complete": "2/4 rue des Lilas 75019 Paris  France",
+            "arrond": 75019,
+            "horaires_normal": "11h \u00e0 22h"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [2.395497, 48.877801]
+        },
+        "record_timestamp": "2014-08-13T20:24:04.556853"
+    },
+    {
+        "datasetid": "distributeurspreservatifsmasculinsparis2012",
+        "recordid": "3752a4d3b50f420f345723a8015f8828a954047d",
+        "fields": {
+            "horaires_vacances_hiver": "8h \u00e0 22h",
+            "horaires_vacances_ete": "8h \u00e0 22h",
+            "adresse": "5-7 rue Neuve St Pierre",
+            "site": "TEP Neuve St Pierre",
+            "annee_installation": "2008/2009",
+            "acces": "Int\u00e9rieur",
+            "geo_coordinates": [48.853622, 2.36381],
+            "adresse_complete": "5-7 rue Neuve St Pierre 75004 Paris  France",
+            "arrond": 75004,
+            "horaires_normal": "8h \u00e0 22h"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [2.36381, 48.853622]
+        },
+        "record_timestamp": "2014-08-13T20:24:04.556853"
+    },
+    {
+        "datasetid": "distributeurspreservatifsmasculinsparis2012",
+        "recordid": "a28ae5db054c6b3d45bfe3f66404379a81f2e07f",
+        "fields": {
+            "horaires_vacances_hiver": "ferm\u00e9",
+            "horaires_vacances_ete": "7h \u00e0 16h",
+            "adresse": "2 rue Jappy",
+            "site": "Gymnase Japy",
+            "annee_installation": "2008/2009",
+            "acces": "Int\u00e9rieur",
+            "geo_coordinates": [48.855888, 2.382548],
+            "adresse_complete": "2 rue Jappy 75011 Paris  France",
+            "arrond": 75011
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [2.382548, 48.855888]
+        },
+        "record_timestamp": "2014-08-13T20:24:04.556853"
+    },
+    {
+        "datasetid": "distributeurspreservatifsmasculinsparis2012",
+        "recordid": "fab8b89754d57b6d0aa24763848f43c05b2f5b35",
+        "fields": {
+            "horaires_vacances_hiver": "7h \u00e0 22h30",
+            "horaires_vacances_ete": "7h \u00e0 22h",
+            "adresse": "18 Av de la Porte de Brancion",
+            "site": "Centre sportif Rigoulot",
+            "annee_installation": "2008/2009",
+            "acces": "Int\u00e9rieur",
+            "geo_coordinates": [48.826643, 2.300662],
+            "adresse_complete": "18 Av de la Porte de Brancion 75015 Paris  France",
+            "arrond": 75015,
+            "horaires_normal": "7h \u00e0 22h30"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [2.300662, 48.826643]
+        },
+        "record_timestamp": "2014-08-13T20:24:04.556853"
+    },
+    {
+        "datasetid": "distributeurspreservatifsmasculinsparis2012",
+        "recordid": "423952dbed120344f4847c79666e067f33435da5",
+        "fields": {
+            "horaires_vacances_hiver": "8h \u00e0 22h",
+            "horaires_vacances_ete": "7h \u00e0 20h",
+            "adresse": "Place de la Porte de Pantin",
+            "site": "Centre sportif Jules Ladoum\u00e8gue",
+            "annee_installation": "2008/2009",
+            "acces": "Int\u00e9rieur",
+            "geo_coordinates": [48.889565, 2.395229],
+            "adresse_complete": "Place de la Porte de Pantin 75019 Paris  France",
+            "arrond": 75019,
+            "horaires_normal": "8h \u00e0 22h"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [2.395229, 48.889565]
+        },
+        "record_timestamp": "2014-08-13T20:24:04.556853"
+    }
+]
