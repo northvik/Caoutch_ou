@@ -61,6 +61,8 @@ public class MapsActivity extends ActionBarActivity implements
     private ArrayList<Pharmacie> pharmacies = new ArrayList<Pharmacie>();
     private ArrayList<Distributeur> distributeurs = new ArrayList<Distributeur>();
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -126,11 +128,11 @@ public class MapsActivity extends ActionBarActivity implements
                     Pharmacie pharma = new Pharmacie();
                     JSONObject jsonObject = jsonArray.getJSONObject(i);
 
-                    pharma.setName(jsonObject.getString("rs"));
+                    pharma.setName(jsonObject.getString("name"));
                     pharma.setTelephone(jsonObject.getString("telephone"));
-                    pharma.setAdrComplete(jsonObject.getString("adresse"));
-                    pharma.setLng((double) jsonObject.getDouble("longitude"));
-                    pharma.setLat((double) jsonObject.getDouble("latitude"));
+                    pharma.setAdrComplete(jsonObject.getString("adresse_complete"));
+                    pharma.setLng((double) jsonObject.getDouble("lng"));
+                    pharma.setLat((double) jsonObject.getDouble("lat"));
                     pharmacies.add(pharma);
                 }
             }
@@ -150,11 +152,10 @@ public class MapsActivity extends ActionBarActivity implements
                     Distributeur distrib = new Distributeur();
                     JSONObject jsonObject = jsonArray.getJSONObject(i);
 
-                    distrib.setName(jsonObject.getString("rs"));
-                    distrib.setAcces(jsonObject.getString("access"));
-                    distrib.setAdrComplete(jsonObject.getString("adresse"));
-                    distrib.setLng((double) jsonObject.getDouble("longitude"));
-                    distrib.setLat((double) jsonObject.getDouble("latitude"));
+                    distrib.setName(jsonObject.getString("name"));
+                    distrib.setAdrComplete(jsonObject.getString("adresse_complete"));
+                    distrib.setLng((double) jsonObject.getDouble("lng"));
+                    distrib.setLat((double) jsonObject.getDouble("lat"));
                     distributeurs.add(distrib);
                 }
             }
@@ -254,32 +255,28 @@ public class MapsActivity extends ActionBarActivity implements
     private void setUpMap() {
         for (Pharmacie pharma : pharmacies)
         {
-            setUpMarkerPharma(pharma.getName(), pharma.getAdrComplete(), pharma.getTelephone(), pharma.getLng(), pharma.getLat());
+            setUpMarkerPharma(pharma);
         }
 
         for (Distributeur distrib : distributeurs)
         {
-            setUpMarkerDistrib(distrib.getName(), distrib.getAdrComplete(), distrib.getHoraires(), distrib.getLng(), distrib.getLat());
+            setUpMarkerDistrib(distrib);
         }
-
-        setUpMarkerDistrib("Stade Jean Pierre Wimille", "56 Bd de l'Amiral Bruix 75016 Paris  France", "7h à 22h30", 48.872568, 2.275998);
-        setUpMarkerPharma("SELARL PHARMACIE MATHIAU LAM", "3 RUE JEANNE D'ARC, 75013 PARIS", "145834022", 48.8287599, 2.3695644);
-
     }
 
 
-    private void setUpMarkerDistrib(String title, String address,String horaire, Double lat, Double lng) {
+    private void setUpMarkerDistrib(Distributeur distrib) {
         StringBuilder snippet = new StringBuilder();
-        snippet.append(address).append("\nHoraires: ").append(horaire);
-        mMap.addMarker(new MarkerOptions().position(new LatLng(lat, lng)).title(title)
+        snippet.append(distrib.getAdrComplete()).append("\nHoraires: ").append(distrib.getHoraires());
+        mMap.addMarker(new MarkerOptions().position(new LatLng(distrib.getLat(), distrib.getLng())).title(distrib.getName())
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_distrib))
                 .snippet(snippet.toString()));
     }
 
-    private void setUpMarkerPharma(String title, String address, String telephone, Double lat, Double lng) {
+    private void setUpMarkerPharma(Pharmacie pharma) {
         StringBuilder snippet = new StringBuilder();
-        snippet.append(address).append("\nTéléphone: ").append(telephone);
-        mMap.addMarker(new MarkerOptions().position(new LatLng(lat, lng)).title(title)
+        snippet.append(pharma.getAdrComplete()).append("\nTéléphone: ").append(pharma.getTelephone());
+        mMap.addMarker(new MarkerOptions().position(new LatLng(pharma.getLat(), pharma.getLng())).title(pharma.getName())
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_pharma))
                 .snippet(snippet.toString()));
     }
