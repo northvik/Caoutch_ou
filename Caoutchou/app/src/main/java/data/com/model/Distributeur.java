@@ -1,9 +1,5 @@
 package data.com.model;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-
-
 public class Distributeur {
 
     private String name;//site

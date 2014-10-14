@@ -3,18 +3,19 @@ package data.com.caoutchou;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentSender;
-import android.graphics.BitmapFactory;
+import android.content.res.AssetManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
-import android.support.v4.app.DialogFragment;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
-import android.util.JsonReader;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -35,10 +36,14 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.FileReader;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
 import data.com.model.Distributeur;
@@ -59,15 +64,13 @@ public class MapsActivity extends ActionBarActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActionBar actBar = getSupportActionBar();
-        actBar.setSubtitle("Le préservatif c'est le kiff");
         setContentView(R.layout.activity_maps);
+        getJsonFile(getApplicationContext(), "pharmacie.json");
         mLocMgr = (LocationManager) getSystemService(LOCATION_SERVICE);
         mLocationClient = new LocationClient(this, this, this);
         mLocMgr.requestLocationUpdates(LocationManager.GPS_PROVIDER, 500, 0, mLocationListener);
         if (isGpsOn()){
             setUpMapIfNeeded();
-            mMap.setInfoWindowAdapter(new PopupAdapter(getLayoutInflater()));
-            mMap.setOnInfoWindowClickListener(this);
         }
         else{
             showGPSDisabledAlertToUser();
@@ -76,6 +79,37 @@ public class MapsActivity extends ActionBarActivity implements
 
     private boolean isGpsOn() {
         return mLocMgr.isProviderEnabled(LocationManager.GPS_PROVIDER);
+    }
+
+    private JSONObject getJsonFile(Context context, String filename) {
+        String result = null;
+        JSONObject jObject = null;
+        StringBuilder sb = new StringBuilder();
+        AssetManager manager = context.getAssets();
+        InputStream file = null;
+        BufferedReader reader = null;
+        try {
+            file = manager.open(filename);
+            reader = new BufferedReader(new InputStreamReader(file, "UTF-8"), 8);
+            String line = null;
+            while ((line = reader.readLine()) != null)
+            {
+                sb.append(line + "\n");
+            }
+            reader.close();
+            result = sb.toString();
+            jObject = new JSONObject(result);
+        }
+        catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        catch (JSONException e) {
+            e.printStackTrace();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        return jObject;
     }
 
 
@@ -154,6 +188,8 @@ public class MapsActivity extends ActionBarActivity implements
             if (mMap != null) {
                 mMap.setMyLocationEnabled(true);
                 setUpMap();
+                mMap.setInfoWindowAdapter(new PopupAdapter(getLayoutInflater(), getApplicationContext()));
+                mMap.setOnInfoWindowClickListener(this);
             }
         }
     }
@@ -165,14 +201,9 @@ public class MapsActivity extends ActionBarActivity implements
     private void setUpMap() {
         pharmacies.clear();
         distributeurs.clear();
-        mMap.addMarker(new MarkerOptions().position(new LatLng(50, 0)).title("Marker").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_launcher)));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(80, 0)).title("Test2"));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(24, 0)).title("Test3"));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(78, 0)).title("Marker2"));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(12, 0)).title("Marker3"));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(45, 0)).title("Marker4").rotation(34));
-        setUpMarkerDistrib("Stade Jean Pierre Wimille", "56 Bd de l'Amiral Bruix 75016 Paris  France", "7h à 22h30", 48.872568, 2.275998);
 
+        setUpMarkerDistrib("Stade Jean Pierre Wimille", "56 Bd de l'Amiral Bruix 75016 Paris  France", "7h à 22h30", 48.872568, 2.275998);
+        setUpMarkerPharma("SELARL PHARMACIE MATHIAU LAM", "3 RUE JEANNE D'ARC, 75013 PARIS", 145834022, 48.8287599, 2.3695644);
 
     }
 
@@ -185,9 +216,9 @@ public class MapsActivity extends ActionBarActivity implements
                 .snippet(snippet.toString()));
     }
 
-    private void setUpMarkerPharma(String title, String address, String horaire, Double lat, Double lng) {
+    private void setUpMarkerPharma(String title, String address, Integer telephone, Double lat, Double lng) {
         StringBuilder snippet = new StringBuilder();
-        snippet.append(address).append("\nHoraires: ").append(horaire);
+        snippet.append(address).append("\nTéléphone: 0").append(telephone);
         mMap.addMarker(new MarkerOptions().position(new LatLng(lat, lng)).title(title)
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_pharma))
                 .snippet(snippet.toString()));
@@ -276,8 +307,15 @@ public class MapsActivity extends ActionBarActivity implements
     }
 
     @Override
+    /**
+     * Lance l'itinéraire sur ce marker lorsque l'on clique dessus
+     */
     public void onInfoWindowClick(Marker marker) {
-       //Toast.makeText(this, marker.getTitle(), Toast.LENGTH_LONG).show();
+       Toast.makeText(this, "Chargement de l'itinéraire", Toast.LENGTH_LONG).show();
+        final Intent navigationIntent = new Intent(Intent.ACTION_VIEW, Uri.parse
+                ("http://maps.google.com/maps?" + "&daddr=" + marker.getPosition().latitude + "," + marker.getPosition().longitude));
+        navigationIntent.setClassName("com.google.android.apps.maps", "com.google.android.maps.MapsActivity");
+        startActivity(navigationIntent);
     }
 
     @Override

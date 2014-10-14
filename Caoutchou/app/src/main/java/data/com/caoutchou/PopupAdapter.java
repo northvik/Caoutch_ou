@@ -5,9 +5,15 @@ package data.com.caoutchou;
  */
 
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.google.android.gms.maps.GoogleMap.InfoWindowAdapter;
 import com.google.android.gms.maps.model.Marker;
 
@@ -17,8 +23,12 @@ class PopupAdapter implements InfoWindowAdapter {
 
     private LayoutInflater inflater=null;
 
-    PopupAdapter(LayoutInflater inflater) {
-        this.inflater=inflater;
+    private Context context;
+
+
+    PopupAdapter(LayoutInflater inflater, Context context) {
+        this.context = context;
+        this.inflater = inflater;
     }
 
     @Override
@@ -29,7 +39,6 @@ class PopupAdapter implements InfoWindowAdapter {
     @SuppressLint("InflateParams")
     @Override
     public View getInfoContents(Marker marker) {
-
         if (popup == null) {
             popup=inflater.inflate(R.layout.popup, null);
         }

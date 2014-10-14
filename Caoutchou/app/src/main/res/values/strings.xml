@@ -5,5 +5,6 @@
     <string name="title_activity_maps">Caoutch\'où</string>
     <string name="settings">Préferences</string>
     <string name="menuSet">Le menu des préferences</string>
+    <string name="navigation">Itinéraire</string>
 
 </resources>

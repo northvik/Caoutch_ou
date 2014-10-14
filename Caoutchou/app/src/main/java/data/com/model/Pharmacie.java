@@ -1,7 +1,5 @@
 package data.com.model;
 
-import java.util.ArrayList;
-
 /**
  * Created by camillepire on 13/10/2014.
  */
