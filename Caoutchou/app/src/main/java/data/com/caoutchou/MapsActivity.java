@@ -165,14 +165,9 @@ public class MapsActivity extends ActionBarActivity implements
     private void setUpMap() {
         pharmacies.clear();
         distributeurs.clear();
-        mMap.addMarker(new MarkerOptions().position(new LatLng(50, 0)).title("Marker").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_launcher)));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(80, 0)).title("Test2"));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(24, 0)).title("Test3"));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(78, 0)).title("Marker2"));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(12, 0)).title("Marker3"));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(45, 0)).title("Marker4").rotation(34));
-        setUpMarkerDistrib("Stade Jean Pierre Wimille", "56 Bd de l'Amiral Bruix 75016 Paris  France", "7h à 22h30", 48.872568, 2.275998);
 
+        setUpMarkerDistrib("Stade Jean Pierre Wimille", "56 Bd de l'Amiral Bruix 75016 Paris  France", "7h à 22h30", 48.872568, 2.275998);
+        setUpMarkerPharma("SELARL PHARMACIE MATHIAU LAM", "3 RUE JEANNE D'ARC, 75013 PARIS", 145834022, 48.8287599, 2.3695644);
 
     }
 
@@ -187,7 +182,7 @@ public class MapsActivity extends ActionBarActivity implements
 
     private void setUpMarkerPharma(String title, String address, Integer telephone, Double lat, Double lng) {
         StringBuilder snippet = new StringBuilder();
-        snippet.append(address).append("\nTéléphone: ").append(telephone);
+        snippet.append(address).append("\nTéléphone: 0").append(telephone);
         mMap.addMarker(new MarkerOptions().position(new LatLng(lat, lng)).title(title)
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_pharma))
                 .snippet(snippet.toString()));
