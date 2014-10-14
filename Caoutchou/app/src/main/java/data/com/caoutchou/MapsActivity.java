@@ -86,36 +86,30 @@ public class MapsActivity extends ActionBarActivity implements
         return mLocMgr.isProviderEnabled(LocationManager.GPS_PROVIDER);
     }
 
-    private JSONArray getJsonFile(Context context, String filename) {
-        String result = null;
-        JSONArray jsonArray = new JSONArray();
-        StringBuilder sb = new StringBuilder();
-        AssetManager manager = context.getAssets();
-        InputStream file = null;
-        BufferedReader reader = null;
+    public JSONArray loadJSONFromAsset(String filename) {
+        String json = null;
         try {
-            file = manager.open(filename);
-            reader = new BufferedReader(new InputStreamReader(file, "UTF-8"), 8);
-            String line = null;
-            while ((line = reader.readLine()) != null)
-            {
-                sb.append(line + "\n");
-            }
-            reader.close();
-            result = sb.toString();
-            jsonArray = new JSONArray(result);
+            InputStream is = getAssets().open(filename);
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            json = new String(buffer, "UTF-8");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            return null;
         }
-        catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
+        JSONArray jsonArray = null;
+        try {
+            jsonArray = new JSONArray(json);
         }
         catch (JSONException e) {
             e.printStackTrace();
         }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
         return jsonArray;
+
     }
+
 
     private void showGPSDisabledAlertToUser(){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
@@ -205,8 +199,10 @@ public class MapsActivity extends ActionBarActivity implements
      * Elle doit être appelée une seule fois pour être sur que {@link #mMap} n'est pas null
      */
     private void setUpMap() {
-        JSONArray jsonArrayPharmacie = getJsonFile(getApplicationContext(), "pharmacie-idf.json");
-        JSONArray jsonArrayDistributeurs = getJsonFile(getApplicationContext(), "preservatif.json");
+      //  JSONArray jsonArrayPharmacie = getJsonFile(getApplicationContext(), "pharmacie-idf.json");
+      //  JSONArray jsonArrayDistributeurs = getJsonFile(getApplicationContext(), "preservatif.json");
+        JSONArray jsonArrayPharmacie = loadJSONFromAsset("pharmacie-idf.json");
+        JSONArray jsonArrayDistributeurs = loadJSONFromAsset("preservatif.json");
         createPharmacies(jsonArrayPharmacie);
         createDistributeurs(jsonArrayDistributeurs);
         for (Pharmacie pharma : pharmacies)
