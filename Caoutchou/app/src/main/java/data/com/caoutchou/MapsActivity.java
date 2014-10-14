@@ -185,9 +185,9 @@ public class MapsActivity extends ActionBarActivity implements
                 .snippet(snippet.toString()));
     }
 
-    private void setUpMarkerPharma(String title, String address, String horaire, Double lat, Double lng) {
+    private void setUpMarkerPharma(String title, String address, Integer telephone, Double lat, Double lng) {
         StringBuilder snippet = new StringBuilder();
-        snippet.append(address).append("\nHoraires: ").append(horaire);
+        snippet.append(address).append("\nTéléphone: ").append(telephone);
         mMap.addMarker(new MarkerOptions().position(new LatLng(lat, lng)).title(title)
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_pharma))
                 .snippet(snippet.toString()));
