@@ -3,217 +3,217 @@
         "name": "Stade Jean Pierre Wimille",
         "lat": 48.872568,
         "lng": 2.275998,
-        "horaires_normal": "07h \u00e0 22h30",
+        "horaires_normal": "7h \u00e0 22h30",
         "adresse_complete": "56 Bd de l'Amiral Bruix 75016 Paris  France"
     },
     {
         "name": "Centre sportif Poissonniers",
         "lat": 48.899628,
         "lng": 2.351833,
-        "horaires_normal": "0",
+        "horaires_normal": null,
         "adresse_complete": "2 rue Jean Cocteau 75018 Paris  France"
     },
     {
         "name": "Centre sportif D\u00e9j\u00e9rine",
         "lat": 48.856795,
         "lng": 2.411563,
-        "horaires_normal": "0",
+        "horaires_normal": null,
         "adresse_complete": "34 rue des docteurs D\u00e9j\u00e9rine 75020 Paris  France"
     },
     {
         "name": "Kiosque jeunes Goutte D'Or",
         "lat": 48.89247,
         "lng": 2.34463,
-        "horaires_normal": "0",
+        "horaires_normal": null,
         "adresse_complete": "1 rue Fleury Centre Musical 75018 Paris  France"
     },
     {
         "name": "Antenne jeunes Olympiades",
         "lat": 48.824405,
         "lng": 2.365686,
-        "horaires_normal": "0",
+        "horaires_normal": null,
         "adresse_complete": "32 rue du Javelot Tour Anvers 75013 Paris  France"
     },
     {
         "name": "Espace jeunes Charles Hermitte",
         "lat": 48.898551,
         "lng": 2.363065,
-        "horaires_normal": "010h \u00e0 20h",
+        "horaires_normal": "10h \u00e0 20h",
         "adresse_complete": "54 Bd Ney 75018 Paris  France"
     },
     {
         "name": "Centre sportif L\u00e9o Lagrange",
         "lat": 48.832304,
         "lng": 2.399533,
-        "horaires_normal": "08h \u00e0 22h",
+        "horaires_normal": "8h \u00e0 22h",
         "adresse_complete": "68 Bd Poniatowsky 75012 Paris  France"
     },
     {
         "name": "Centre sportif Jules No\u00ebl",
         "lat": 48.824199,
         "lng": 2.315428,
-        "horaires_normal": "08h \u00e0 22h30",
+        "horaires_normal": "8h \u00e0 22h30",
         "adresse_complete": "3 Av Maurice D'Ocagne 75014 Paris  France"
     },
     {
         "name": "Gymnase C\u00e9vennes",
         "lat": 48.840328,
         "lng": 2.279085,
-        "horaires_normal": "07h \u00e0 22h30",
+        "horaires_normal": "7h \u00e0 22h30",
         "adresse_complete": "11 rue de la Montagne d'Aulas 75015 Paris  France"
     },
     {
         "name": "Centre sportif Max Rousi\u00e9",
         "lat": 48.88387,
         "lng": 2.31863,
-        "horaires_normal": "08h \u00e0 21h30",
+        "horaires_normal": "8h \u00e0 21h30",
         "adresse_complete": "28 rue Andr\u00e9 Br\u00e9chet 75017 Paris  France"
     },
     {
         "name": "Gymnase Jean Jaur\u00e8s",
         "lat": 48.88237,
         "lng": 2.38225,
-        "horaires_normal": "07h \u00e0 22h30",
+        "horaires_normal": "7h \u00e0 22h30",
         "adresse_complete": "87 Av J.Jaur\u00e8s 75019 Paris  France"
     },
     {
         "name": "Kiosque jeunes Champ de Mars",
         "lat": 48.85494,
         "lng": 2.289272,
-        "horaires_normal": "010h \u00e0 18h",
+        "horaires_normal": "10h \u00e0 18h",
         "adresse_complete": "101 Quai Branly 75015 Paris  France"
     },
     {
         "name": "Antenne jeunes Flandre",
         "lat": 48.887047,
         "lng": 2.372123,
-        "horaires_normal": "0",
+        "horaires_normal": null,
         "adresse_complete": "49 ter Av de Flandre 75019 Paris  France"
     },
     {
         "name": "Centre d'animation Vercing\u00e9torix",
         "lat": 48.831535,
         "lng": 2.309606,
-        "horaires_normal": "010h \u00e0 18h",
+        "horaires_normal": "10h \u00e0 18h",
         "adresse_complete": "181\/183 rue de Vercing\u00e9torix 75014 Paris  France"
     },
     {
         "name": "Espace jeunes Goutte D'Or",
         "lat": 48.884987,
         "lng": 2.354645,
-        "horaires_normal": "014h \u00e0 21h",
+        "horaires_normal": "14h \u00e0 21h",
         "adresse_complete": "6 rue de la Goutte d'Or 75018 Paris  France"
     },
     {
         "name": "Espace jeunes St Blaise",
         "lat": 48.854988,
         "lng": 2.407303,
-        "horaires_normal": "010h30 \u00e0 19h",
+        "horaires_normal": "10h30 \u00e0 19h",
         "adresse_complete": "1 rue Pauline Kergomard 75020 Paris  France"
     },
     {
         "name": "Centre sportif Grange aux belles",
         "lat": 48.877355,
         "lng": 2.368197,
-        "horaires_normal": "08h \u00e0 22h30",
+        "horaires_normal": "8h \u00e0 22h30",
         "adresse_complete": "17 rue Boy-Zelenski 75010 Paris  France"
     },
     {
         "name": "Centre sportif Bourneville",
         "lat": 48.817942,
         "lng": 2.359162,
-        "horaires_normal": "07h \u00e0 22h30",
+        "horaires_normal": "7h \u00e0 22h30",
         "adresse_complete": "5 rue du docteur Bourneville 75013 Paris  France"
     },
     {
         "name": "Centre sportif Georges Carpentier",
         "lat": 48.82046,
         "lng": 2.366898,
-        "horaires_normal": "08h \u00e0 22h",
+        "horaires_normal": "8h \u00e0 22h",
         "adresse_complete": "81 Bd Mass\u00e9na 75013 Paris  France"
     },
     {
         "name": "Centre sportif Goutte d'Or",
         "lat": 48.884988,
         "lng": 2.354328,
-        "horaires_normal": "07h \u00e0 22h30",
+        "horaires_normal": "7h \u00e0 22h30",
         "adresse_complete": "10-12 passage de la Goutte d'Or 75018 Paris  France"
     },
     {
         "name": "Antenne jeunes Orillon",
         "lat": 48.870536,
         "lng": 2.377394,
-        "horaires_normal": "0",
+        "horaires_normal": null,
         "adresse_complete": "43 rue de l'Orillon 75011 Paris  France"
     },
     {
         "name": "Gymnase Patriarches",
         "lat": 48.840253,
         "lng": 2.350677,
-        "horaires_normal": "07h \u00e0 22h30",
+        "horaires_normal": "7h \u00e0 22h30",
         "adresse_complete": "6 Place Bernard Halphen 75005 Paris  France"
     },
     {
         "name": "Gymnase Buffault",
         "lat": 48.875976,
         "lng": 2.342156,
-        "horaires_normal": "09h \u00e0 22h30",
+        "horaires_normal": "9h \u00e0 22h30",
         "adresse_complete": "26 rue Buffault 75009 Paris  France"
     },
     {
         "name": "Centre spotif Paul Val\u00e9ry",
         "lat": 48.837933,
         "lng": 2.410282,
-        "horaires_normal": "08h \u00e0 22h",
+        "horaires_normal": "8h \u00e0 22h",
         "adresse_complete": "15 rue de la Nouvelle Cal\u00e9donie 75012 Paris  France"
     },
     {
         "name": "Centre sportif Elisabeth",
         "lat": 48.821232,
         "lng": 2.328912,
-        "horaires_normal": "08h \u00e0 22h30",
+        "horaires_normal": "8h \u00e0 22h30",
         "adresse_complete": "7-15 Av Paul Appell 75014 Paris  France"
     },
     {
         "name": "Centre d'animation Jemmapes",
         "lat": 48.874772,
         "lng": 2.363661,
-        "horaires_normal": "09h \u00e0 22h",
+        "horaires_normal": "9h \u00e0 22h",
         "adresse_complete": "116 Quai de Jemmapes 75010 Paris  France"
     },
     {
         "name": "Centre d'animation Place des F\u00eates",
         "lat": 48.877801,
         "lng": 2.395497,
-        "horaires_normal": "011h \u00e0 22h",
+        "horaires_normal": "11h \u00e0 22h",
         "adresse_complete": "2\/4 rue des Lilas 75019 Paris  France"
     },
     {
         "name": "TEP Neuve St Pierre",
         "lat": 48.853622,
         "lng": 2.36381,
-        "horaires_normal": "08h \u00e0 22h",
+        "horaires_normal": "8h \u00e0 22h",
         "adresse_complete": "5-7 rue Neuve St Pierre 75004 Paris  France"
     },
     {
         "name": "Gymnase Japy",
         "lat": 48.855888,
         "lng": 2.382548,
-        "horaires_normal": "0",
+        "horaires_normal": null,
         "adresse_complete": "2 rue Jappy 75011 Paris  France"
     },
     {
         "name": "Centre sportif Rigoulot",
         "lat": 48.826643,
         "lng": 2.300662,
-        "horaires_normal": "07h \u00e0 22h30",
+        "horaires_normal": "7h \u00e0 22h30",
         "adresse_complete": "18 Av de la Porte de Brancion 75015 Paris  France"
     },
     {
         "name": "Centre sportif Jules Ladoum\u00e8gue",
         "lat": 48.889565,
         "lng": 2.395229,
-        "horaires_normal": "08h \u00e0 22h",
+        "horaires_normal": "8h \u00e0 22h",
         "adresse_complete": "Place de la Porte de Pantin 75019 Paris  France"
     }
 ]

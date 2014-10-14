@@ -44,10 +44,26 @@ foreach ($google as $value) {
 	$tab[]=array('name'=>$value['fields']['site'],
 					'lat'=>$value['fields']['geo_coordinates'][0],
 					'lng'=>$value['fields']['geo_coordinates'][1],
-					'horaires_normal'=>'0'.$value['fields']['horaires_normal'],
+					'horaires_normal'=>$value['fields']['horaires_normal'],
 					'adresse_complete'=>$value['fields']['adresse_complete']);
 
 }
 
 fputs($fp, json_encode($tab));
 fclose($fp);
+
+//unlink("../fichier/pharmacie-idf2.json");
+//$fp = fopen("../fichier/pharmacie-idf2.json", "a");
+//$google=json_decode(file_get_contents("../fichier/pharmacie-idf.json"),true);
+//$tab= array();
+//foreach ($google as $value) {
+//    $tab[]=array('name'=>$value['fields']['rs'],
+//        'lat'=>$value['fields']['wgs84'][0],
+//        'lng'=>$value['fields']['wgs84'][1],
+//        'telephone'=>'0'.$value['fields']['telephone'],
+//        'adresse_complete'=>$value['fields']['numvoie'].' '.$value['fields']['typvoie'].' '.$value['fields']['voie'].', '.$value['fields']['cp'].' '.$value['fields']['commune']);
+//
+//}
+//
+//fputs($fp, json_encode($tab));
+//fclose($fp);
