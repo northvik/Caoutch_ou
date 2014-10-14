@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentSender;
+import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.location.Location;
 import android.location.LocationListener;
@@ -60,18 +61,16 @@ public class MapsActivity extends ActionBarActivity implements
     private final static int CONNECTION_FAILURE_RESOLUTION_REQUEST = 9000;
     private ArrayList<Pharmacie> pharmacies = new ArrayList<Pharmacie>();
     private ArrayList<Distributeur> distributeurs = new ArrayList<Distributeur>();
-
+    private SharedPreferences settings;
+    private static final String PREFS_NAME = "MyPrefsFile";
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActionBar actBar = getSupportActionBar();
+        settings = this.getSharedPreferences(PREFS_NAME, 0);
         setContentView(R.layout.activity_maps);
-        JSONArray jsonArrayPharmacie = getJsonFile(getApplicationContext(), "pharmacie.json");
-        JSONArray jsonArrayDistributeurs = getJsonFile(getApplicationContext(), "preservatif.json");
-        createPharmacies(jsonArrayPharmacie);
-        createDistributeurs(jsonArrayDistributeurs);
         mLocMgr = (LocationManager) getSystemService(LOCATION_SERVICE);
         mLocationClient = new LocationClient(this, this, this);
         mLocMgr.requestLocationUpdates(LocationManager.GPS_PROVIDER, 500, 0, mLocationListener);
@@ -117,55 +116,6 @@ public class MapsActivity extends ActionBarActivity implements
         }
         return jsonArray;
     }
-
-    private void createPharmacies(JSONArray jsonArray)
-    {
-        pharmacies.clear();
-        try {
-            for (int i = 0; i < jsonArray.length(); i++) {
-                if (jsonArray.getJSONObject(i) != null)
-                {
-                    Pharmacie pharma = new Pharmacie();
-                    JSONObject jsonObject = jsonArray.getJSONObject(i);
-
-                    pharma.setName(jsonObject.getString("name"));
-                    pharma.setTelephone(jsonObject.getString("telephone"));
-                    pharma.setAdrComplete(jsonObject.getString("adresse_complete"));
-                    pharma.setLng((double) jsonObject.getDouble("lng"));
-                    pharma.setLat((double) jsonObject.getDouble("lat"));
-                    pharmacies.add(pharma);
-                }
-            }
-        }
-        catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void createDistributeurs(JSONArray jsonArray)
-    {
-        distributeurs.clear();
-        try {
-            for (int i = 0; i < jsonArray.length(); i++) {
-                if (jsonArray.getJSONObject(i) != null)
-                {
-                    Distributeur distrib = new Distributeur();
-                    JSONObject jsonObject = jsonArray.getJSONObject(i);
-
-                    distrib.setName(jsonObject.getString("name"));
-                    distrib.setAdrComplete(jsonObject.getString("adresse_complete"));
-                    distrib.setLng((double) jsonObject.getDouble("lng"));
-                    distrib.setLat((double) jsonObject.getDouble("lat"));
-                    distributeurs.add(distrib);
-                }
-            }
-        }
-        catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
-
-
 
     private void showGPSDisabledAlertToUser(){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
@@ -216,6 +166,8 @@ public class MapsActivity extends ActionBarActivity implements
         switch (item.getItemId()) {
             case R.id.menu_mentions:
                     startSettings(findViewById(R.id.map));
+            case R.id.menu_distrib:
+
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -253,6 +205,10 @@ public class MapsActivity extends ActionBarActivity implements
      * Elle doit être appelée une seule fois pour être sur que {@link #mMap} n'est pas null
      */
     private void setUpMap() {
+        JSONArray jsonArrayPharmacie = getJsonFile(getApplicationContext(), "pharmacie.json");
+        JSONArray jsonArrayDistributeurs = getJsonFile(getApplicationContext(), "preservatif.json");
+        createPharmacies(jsonArrayPharmacie);
+        createDistributeurs(jsonArrayDistributeurs);
         for (Pharmacie pharma : pharmacies)
         {
             setUpMarkerPharma(pharma);
@@ -264,10 +220,56 @@ public class MapsActivity extends ActionBarActivity implements
         }
     }
 
+    private void createPharmacies(JSONArray jsonArray)
+    {
+        pharmacies.clear();
+        try {
+            for (int i = 0; i < jsonArray.length(); i++) {
+                if (jsonArray.getJSONObject(i) != null)
+                {
+                    Pharmacie pharma = new Pharmacie();
+                    JSONObject jsonObject = jsonArray.getJSONObject(i);
+                    pharma.setName(jsonObject.getString("name"));
+                    pharma.setTelephone(jsonObject.getString("telephone"));
+                    pharma.setAdrComplete(jsonObject.getString("adresse_complete"));
+                    pharma.setLng(jsonObject.getDouble("lng"));
+                    pharma.setLat(jsonObject.getDouble("lat"));
+                    pharmacies.add(pharma);
+                }
+            }
+        }
+        catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void createDistributeurs(JSONArray jsonArray)
+    {
+        distributeurs.clear();
+        try {
+            for (int i = 0; i < jsonArray.length(); i++) {
+                if (jsonArray.getJSONObject(i) != null)
+                {
+                    Distributeur distrib = new Distributeur();
+                    JSONObject jsonObject = jsonArray.getJSONObject(i);
+
+                    distrib.setName(jsonObject.getString("name"));
+                    distrib.setAdrComplete(jsonObject.getString("adresse_complete"));
+                    distrib.setLng(jsonObject.getDouble("lng"));
+                    distrib.setLat(jsonObject.getDouble("lat"));
+                    distributeurs.add(distrib);
+                }
+            }
+        }
+        catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     private void setUpMarkerDistrib(Distributeur distrib) {
         StringBuilder snippet = new StringBuilder();
-        snippet.append(distrib.getAdrComplete()).append("\nHoraires: ").append(distrib.getHoraires());
+        snippet.append(distrib.getAdrComplete()).append("\nHoraires: ").append(distrib.getHoraires() == null ? "Non disponible " : distrib.getHoraires());
         mMap.addMarker(new MarkerOptions().position(new LatLng(distrib.getLat(), distrib.getLng())).title(distrib.getName())
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_distrib))
                 .snippet(snippet.toString()));
@@ -275,10 +277,13 @@ public class MapsActivity extends ActionBarActivity implements
 
     private void setUpMarkerPharma(Pharmacie pharma) {
         StringBuilder snippet = new StringBuilder();
-        snippet.append(pharma.getAdrComplete()).append("\nTéléphone: ").append(pharma.getTelephone());
+        snippet.append(pharma.getAdrComplete())
+                .append("\nTéléphone: ")
+                .append(pharma.getTelephone() == null ? "Non disponible" : pharma.getTelephone());
         mMap.addMarker(new MarkerOptions().position(new LatLng(pharma.getLat(), pharma.getLng())).title(pharma.getName())
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_pharma))
                 .snippet(snippet.toString()));
+
     }
 
     @Override

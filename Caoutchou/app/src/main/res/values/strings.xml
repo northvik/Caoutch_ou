@@ -6,5 +6,6 @@
     <string name="settings">Préferences</string>
     <string name="menuSet">Le menu des préferences</string>
     <string name="navigation">Itinéraire</string>
+    <string name="distributeur">Distributeurs</string>
 
 </resources>

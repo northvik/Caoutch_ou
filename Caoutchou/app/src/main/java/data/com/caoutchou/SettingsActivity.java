@@ -1,6 +1,7 @@
 package data.com.caoutchou;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -9,9 +10,13 @@ import android.view.MenuItem;
 
 public class SettingsActivity extends ActionBarActivity {
 
+    private SharedPreferences settings;
+    private static final String PREFS_NAME = "MyPrefsFile";
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+        settings = this.getSharedPreferences(PREFS_NAME, 0);
 		setContentView(R.layout.activity_settings);
 		getSupportActionBar().setTitle("Préferences");
 	}
