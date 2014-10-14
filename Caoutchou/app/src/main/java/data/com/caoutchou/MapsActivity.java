@@ -68,7 +68,7 @@ public class MapsActivity extends ActionBarActivity implements
         super.onCreate(savedInstanceState);
         ActionBar actBar = getSupportActionBar();
         setContentView(R.layout.activity_maps);
-        JSONArray jsonArrayPharmacie = getJsonFile(getApplicationContext(), "pharmacie.json");
+        JSONArray jsonArrayPharmacie = getJsonFile(getApplicationContext(), "pharmacie-idf.json");
         JSONArray jsonArrayDistributeurs = getJsonFile(getApplicationContext(), "preservatif.json");
         createPharmacies(jsonArrayPharmacie);
         createDistributeurs(jsonArrayDistributeurs);
