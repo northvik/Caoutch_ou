@@ -30,14 +30,24 @@
 // fclose($fp);
 
 
+    // private String name;//rs
+    // private Double lat;//wgs84[0]
+    // private Double lng;//wgs84[1]
+    // private Integer telephone;
+    // private String adresse_complete;// numvoie+' '+typvoie+' '+voie+', '+cp+' '+commune
 
-$google=json_decode(file_get_contents("bar_liste_clean2.txt"),true);
-$i=0;
+unlink("../fichier/preservatif2.json");
+$fp = fopen("../fichier/preservatif2.json", "a");
+$google=json_decode(file_get_contents("../fichier/preservatif.json"),true);
+$tab= array();
 foreach ($google as $value) {
-	if($value["lat"]==NULL){
-		echo "---------------".$value["name"]."\n ".$value["address"].", ".$value["cp"]." ".$value["city"]."\n";
-		$i++;
-	}
+	$tab[]=array('name'=>$value['fields']['site'],
+					'lat'=>$value['fields']['geo_coordinates'][0],
+					'lng'=>$value['fields']['geo_coordinates'][1],
+					'horaires_normal'=>'0'.$value['fields']['horaires_normal'],
+					'adresse_complete'=>$value['fields']['adresse_complete']);
+
 }
 
-echo $i;
+fputs($fp, json_encode($tab));
+fclose($fp);
