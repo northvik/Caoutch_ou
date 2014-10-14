@@ -205,7 +205,7 @@ public class MapsActivity extends ActionBarActivity implements
      * Elle doit être appelée une seule fois pour être sur que {@link #mMap} n'est pas null
      */
     private void setUpMap() {
-        JSONArray jsonArrayPharmacie = getJsonFile(getApplicationContext(), "pharmacie.json");
+        JSONArray jsonArrayPharmacie = getJsonFile(getApplicationContext(), "pharmacie-idf.json");
         JSONArray jsonArrayDistributeurs = getJsonFile(getApplicationContext(), "preservatif.json");
         createPharmacies(jsonArrayPharmacie);
         createDistributeurs(jsonArrayDistributeurs);
