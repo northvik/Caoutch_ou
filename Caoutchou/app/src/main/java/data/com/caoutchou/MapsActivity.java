@@ -36,6 +36,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -65,7 +66,10 @@ public class MapsActivity extends ActionBarActivity implements
         super.onCreate(savedInstanceState);
         ActionBar actBar = getSupportActionBar();
         setContentView(R.layout.activity_maps);
-        getJsonFile(getApplicationContext(), "pharmacie.json");
+        JSONArray jsonArrayPharmacie = getJsonFile(getApplicationContext(), "pharmacie.json");
+        JSONArray jsonArrayDistributeurs = getJsonFile(getApplicationContext(), "preservatif.json");
+        createPharmacies(jsonArrayPharmacie);
+        createDistributeurs(jsonArrayDistributeurs);
         mLocMgr = (LocationManager) getSystemService(LOCATION_SERVICE);
         mLocationClient = new LocationClient(this, this, this);
         mLocMgr.requestLocationUpdates(LocationManager.GPS_PROVIDER, 500, 0, mLocationListener);
@@ -81,9 +85,9 @@ public class MapsActivity extends ActionBarActivity implements
         return mLocMgr.isProviderEnabled(LocationManager.GPS_PROVIDER);
     }
 
-    private JSONObject getJsonFile(Context context, String filename) {
+    private JSONArray getJsonFile(Context context, String filename) {
         String result = null;
-        JSONObject jObject = null;
+        JSONArray jsonArray = new JSONArray();
         StringBuilder sb = new StringBuilder();
         AssetManager manager = context.getAssets();
         InputStream file = null;
@@ -98,7 +102,7 @@ public class MapsActivity extends ActionBarActivity implements
             }
             reader.close();
             result = sb.toString();
-            jObject = new JSONObject(result);
+            jsonArray = new JSONArray(result);
         }
         catch (UnsupportedEncodingException e) {
             e.printStackTrace();
@@ -109,8 +113,57 @@ public class MapsActivity extends ActionBarActivity implements
         catch (IOException e) {
             e.printStackTrace();
         }
-        return jObject;
+        return jsonArray;
     }
+
+    private void createPharmacies(JSONArray jsonArray)
+    {
+        pharmacies.clear();
+        try {
+            for (int i = 0; i < jsonArray.length(); i++) {
+                if (jsonArray.getJSONObject(i) != null)
+                {
+                    Pharmacie pharma = new Pharmacie();
+                    JSONObject jsonObject = jsonArray.getJSONObject(i);
+
+                    pharma.setName(jsonObject.getString("rs"));
+                    pharma.setTelephone(jsonObject.getString("telephone"));
+                    pharma.setAdrComplete(jsonObject.getString("adresse"));
+                    pharma.setLng((double) jsonObject.getDouble("longitude"));
+                    pharma.setLat((double) jsonObject.getDouble("latitude"));
+                    pharmacies.add(pharma);
+                }
+            }
+        }
+        catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void createDistributeurs(JSONArray jsonArray)
+    {
+        distributeurs.clear();
+        try {
+            for (int i = 0; i < jsonArray.length(); i++) {
+                if (jsonArray.getJSONObject(i) != null)
+                {
+                    Distributeur distrib = new Distributeur();
+                    JSONObject jsonObject = jsonArray.getJSONObject(i);
+
+                    distrib.setName(jsonObject.getString("rs"));
+                    distrib.setAcces(jsonObject.getString("access"));
+                    distrib.setAdrComplete(jsonObject.getString("adresse"));
+                    distrib.setLng((double) jsonObject.getDouble("longitude"));
+                    distrib.setLat((double) jsonObject.getDouble("latitude"));
+                    distributeurs.add(distrib);
+                }
+            }
+        }
+        catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 
     private void showGPSDisabledAlertToUser(){
@@ -118,8 +171,8 @@ public class MapsActivity extends ActionBarActivity implements
         alertDialogBuilder.setMessage("Voulez vous activer votre GPS ?")
                 .setCancelable(false)
                 .setPositiveButton("Activer le GPS",
-                        new DialogInterface.OnClickListener(){
-                            public void onClick(DialogInterface dialog, int id){
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
                                 Intent callGPSSettingIntent = new Intent(
                                         android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS);
                                 startActivity(callGPSSettingIntent);
@@ -199,11 +252,18 @@ public class MapsActivity extends ActionBarActivity implements
      * Elle doit être appelée une seule fois pour être sur que {@link #mMap} n'est pas null
      */
     private void setUpMap() {
-        pharmacies.clear();
-        distributeurs.clear();
+        for (Pharmacie pharma : pharmacies)
+        {
+            setUpMarkerPharma(pharma.getName(), pharma.getAdrComplete(), pharma.getTelephone(), pharma.getLng(), pharma.getLat());
+        }
+
+        for (Distributeur distrib : distributeurs)
+        {
+            setUpMarkerDistrib(distrib.getName(), distrib.getAdrComplete(), distrib.getHoraires(), distrib.getLng(), distrib.getLat());
+        }
 
         setUpMarkerDistrib("Stade Jean Pierre Wimille", "56 Bd de l'Amiral Bruix 75016 Paris  France", "7h à 22h30", 48.872568, 2.275998);
-        setUpMarkerPharma("SELARL PHARMACIE MATHIAU LAM", "3 RUE JEANNE D'ARC, 75013 PARIS", 145834022, 48.8287599, 2.3695644);
+        setUpMarkerPharma("SELARL PHARMACIE MATHIAU LAM", "3 RUE JEANNE D'ARC, 75013 PARIS", "145834022", 48.8287599, 2.3695644);
 
     }
 
@@ -216,9 +276,9 @@ public class MapsActivity extends ActionBarActivity implements
                 .snippet(snippet.toString()));
     }
 
-    private void setUpMarkerPharma(String title, String address, Integer telephone, Double lat, Double lng) {
+    private void setUpMarkerPharma(String title, String address, String telephone, Double lat, Double lng) {
         StringBuilder snippet = new StringBuilder();
-        snippet.append(address).append("\nTéléphone: 0").append(telephone);
+        snippet.append(address).append("\nTéléphone: ").append(telephone);
         mMap.addMarker(new MarkerOptions().position(new LatLng(lat, lng)).title(title)
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_pharma))
                 .snippet(snippet.toString()));

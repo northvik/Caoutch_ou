@@ -8,15 +8,20 @@ public class Pharmacie {
     private String name;//rs
     private Double lat;//wgs84[0]
     private Double lng;//wgs84[1]
-    private Integer telephone;
-    private String adresse_complete;// numvoie+' '+typvoie+' '+voie+', '+cp+' '+commune
+    private String telephone;
+    private String adrComplete;// numvoie+' '+typvoie+' '+voie+', '+cp+' '+commune
 
-    public Pharmacie(String name, Double lat, Double lng, Integer telephone, String adresse_complete) {
+    public Pharmacie(String name, Double lat, Double lng, String telephone, String adrComplete) {
         this.name = name;
         this.lat = lat;
         this.lng = lng;
         this.telephone = telephone;
-        this.adresse_complete = adresse_complete;
+        this.adrComplete = adrComplete;
+    }
+
+    public Pharmacie()
+    {
+
     }
 
     public String getName() {
@@ -43,19 +48,19 @@ public class Pharmacie {
         this.lng = lng;
     }
 
-    public Integer getTelephone() {
+    public String getTelephone() {
         return telephone;
     }
 
-    public void setTelephone(Integer telephone) {
+    public void setTelephone(String telephone) {
         this.telephone = telephone;
     }
 
-    public String getAdresse_complete() {
-        return adresse_complete;
+    public String getAdrComplete() {
+        return adrComplete;
     }
 
-    public void setAdresse_complete(String adresse_complete) {
-        this.adresse_complete = adresse_complete;
+    public void setAdrComplete(String adrComplete) {
+        this.adrComplete = adrComplete;
     }
 }
