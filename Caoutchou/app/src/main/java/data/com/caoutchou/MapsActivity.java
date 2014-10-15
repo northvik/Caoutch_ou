@@ -282,6 +282,10 @@ public class MapsActivity extends ActionBarActivity implements
         Location location = mLocationClient.getLastLocation();
         LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
         CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, 17);
+        if (mMap == null)
+        {
+            setUpMapIfNeeded();
+        }
         mMap.animateCamera(cameraUpdate);
         isFirstLoading = true;
         new Handler().postDelayed(new Runnable(){

@@ -138,6 +138,7 @@ public class SplashActivity extends ActionBarActivity {
                     distrib.setAdrComplete(jsonObject.getString("adresse_complete"));
                     distrib.setLng(jsonObject.getDouble("lng"));
                     distrib.setLat(jsonObject.getDouble("lat"));
+                    distrib.setHoraires(jsonObject.getString("horaires_normal"));
                     distributeurDataSource.createDistributeur(distrib);
                 }
             }

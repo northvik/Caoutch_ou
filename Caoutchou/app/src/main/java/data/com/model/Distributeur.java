@@ -70,7 +70,13 @@ public class Distributeur implements java.io.Serializable {
     }
 
     public void setHoraires(String horaires) {
-        this.horaires = horaires;
+        if (horaires == "null")
+        {
+            this.horaires = "Indisponible";
+        }
+        else {
+            this.horaires = horaires;
+        }
     }
 
     public void setId(Integer id) {
