@@ -102,12 +102,15 @@ public class DistributeurDataSource {
     }
 
     public List<Distributeur> getCoordonateDistributeurs(ArrayList<LatLng> view) {
+
         List<Distributeur> Distributeurs = new ArrayList<Distributeur>();
 
         Cursor cursor = database.query(MySQLiteHelper.TABLE_DISTRIB,
                 allColumns,
-                MySQLiteHelper.COLUMN_LAT + " <= " + view. +
-                " AND " + MySQLiteHelper.COLUMN_LAT + "  >= ",
+                MySQLiteHelper.COLUMN_LAT + " >= " + view.get(0).latitude +
+                " AND " + MySQLiteHelper.COLUMN_LAT + "  <= " + view.get(1).latitude +
+                " AND " + MySQLiteHelper.COLUMN_LNG + "  <= " + view.get(0).longitude +
+                " AND " + MySQLiteHelper.COLUMN_LNG + "  >= " + view.get(1).longitude ,
                 null, null, null, null);
 
         cursor.moveToFirst();

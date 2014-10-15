@@ -221,7 +221,7 @@ public class MapsActivity extends ActionBarActivity implements
             pharmacieDataSource.open();
            //JSONArray jsonArrayPharmacie = loadJSONFromAsset("pharmacie-idf.json");
            // createPharmacies(jsonArrayPharmacie);
-            for (Pharmacie pharma : pharmacieDataSource.getAllPharmacies()) {
+            for (Pharmacie pharma : pharmacieDataSource.getCoordonatePharmacie(this.getFarLeftAndFarRight())) {
                 setUpMarkerPharma(pharma);
             }
             pharmacieDataSource.close();
@@ -230,7 +230,7 @@ public class MapsActivity extends ActionBarActivity implements
             distributeurDataSource.open();
            // JSONArray jsonArrayDistributeurs = loadJSONFromAsset("preservatif.json");
            // createDistributeurs(jsonArrayDistributeurs);
-            for (Distributeur distrib : distributeurDataSource.getAllDistributeurs()) {
+            for (Distributeur distrib : distributeurDataSource.getCoordonateDistributeurs(this.getFarLeftAndFarRight())) {
                 setUpMarkerDistrib(distrib);
             }
             distributeurDataSource.close();
@@ -370,8 +370,8 @@ public class MapsActivity extends ActionBarActivity implements
                 Toast.LENGTH_SHORT).show();
     }
 
-    public ArrayList<LatLng> getFarLeftAndFarRight(GoogleMap map){
-        Projection pr = map.getProjection();
+    public ArrayList<LatLng> getFarLeftAndFarRight(){
+        Projection pr = mMap.getProjection();
         LatLngBounds bounds = pr.getVisibleRegion().latLngBounds;
         LatLng northEast = bounds.northeast;
         LatLng southWest =  bounds.southwest;
