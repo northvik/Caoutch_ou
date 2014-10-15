@@ -31,7 +31,7 @@ public class SplashActivity extends ActionBarActivity {
     private static final String PREFS_NAME = "MyPrefsFile";
     private PharmacieDataSource pharmacieDataSource;
     private DistributeurDataSource distributeurDataSource;
-    private boolean isDB;
+    private boolean isDbEmpty;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -42,7 +42,7 @@ public class SplashActivity extends ActionBarActivity {
         distributeurDataSource = new DistributeurDataSource(this);
         try {
             pharmacieDataSource.open();
-            isDB = pharmacieDataSource.isEmpty();
+            isDbEmpty = pharmacieDataSource.isEmpty();
             pharmacieDataSource.close();
         }
         catch (SQLException e) {
@@ -52,7 +52,7 @@ public class SplashActivity extends ActionBarActivity {
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run() {
-                if (!isDB)
+                if (isDbEmpty)
                 {
                     createDB();
                 }
