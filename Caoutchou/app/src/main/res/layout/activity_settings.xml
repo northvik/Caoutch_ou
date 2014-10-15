@@ -15,15 +15,28 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="25sp" />
 
-    <TextView
-        android:id="@+id/music"
+    <Switch
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:text="Pharmacies"
+        android:id="@+id/pharmaSwitch"
         android:layout_below="@+id/settingTitle"
-        android:layout_marginLeft="22dp"
-        android:layout_marginTop="52dp"
-        android:textSize="15sp"
-        android:text="@string/menuSet" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="27dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Distributeurs"
+        android:id="@+id/distribSwitch"
+        android:layout_below="@+id/pharmaSwitch"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
 
 </RelativeLayout>

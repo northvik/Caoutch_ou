@@ -5,8 +5,4 @@
         android:title="@string/settings"
         />
 
-    <item android:id="@+id/menu_distrib"
-        android:checkable="true"
-        android:title="@string/distributeur"/>
-
 </menu>

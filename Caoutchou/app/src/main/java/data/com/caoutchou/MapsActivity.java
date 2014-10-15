@@ -160,8 +160,6 @@ public class MapsActivity extends ActionBarActivity implements
         switch (item.getItemId()) {
             case R.id.menu_mentions:
                     startSettings(findViewById(R.id.map));
-            case R.id.menu_distrib:
-
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -201,19 +199,21 @@ public class MapsActivity extends ActionBarActivity implements
     private void setUpMap() {
       //  JSONArray jsonArrayPharmacie = getJsonFile(getApplicationContext(), "pharmacie-idf.json");
       //  JSONArray jsonArrayDistributeurs = getJsonFile(getApplicationContext(), "preservatif.json");
-        JSONArray jsonArrayPharmacie = loadJSONFromAsset("pharmacie-idf.json");
-        JSONArray jsonArrayDistributeurs = loadJSONFromAsset("preservatif.json");
-        createPharmacies(jsonArrayPharmacie);
-        createDistributeurs(jsonArrayDistributeurs);
-        for (Pharmacie pharma : pharmacies)
-        {
-            setUpMarkerPharma(pharma);
+        if (settings.getBoolean("pharma", true)) {
+            JSONArray jsonArrayPharmacie = loadJSONFromAsset("pharmacie-idf.json");
+            createPharmacies(jsonArrayPharmacie);
+            for (Pharmacie pharma : pharmacies) {
+                setUpMarkerPharma(pharma);
+            }
+        }
+        if (settings.getBoolean("distrib", true)) {
+            JSONArray jsonArrayDistributeurs = loadJSONFromAsset("preservatif.json");
+            createDistributeurs(jsonArrayDistributeurs);
+            for (Distributeur distrib : distributeurs) {
+                setUpMarkerDistrib(distrib);
+            }
         }
 
-        for (Distributeur distrib : distributeurs)
-        {
-            setUpMarkerDistrib(distrib);
-        }
     }
 
     private void createPharmacies(JSONArray jsonArray)
