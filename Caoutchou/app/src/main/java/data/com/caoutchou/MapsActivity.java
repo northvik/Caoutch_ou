@@ -33,6 +33,8 @@ import com.google.android.gms.location.LocationClient;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.Projection;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
@@ -367,6 +369,15 @@ public class MapsActivity extends ActionBarActivity implements
                 Toast.LENGTH_SHORT).show();
     }
 
+    public ArrayList<LatLng> getFarLeftAndFarRight(GoogleMap map){
+        Projection pr = map.getProjection();
+        LatLng farLeft = pr.getVisibleRegion().farLeft;
+        LatLng farRight =  pr.getVisibleRegion().farRight;
+        ArrayList<LatLng> coordonnees = new ArrayList<LatLng>();
+        coordonnees.add(farLeft);
+        coordonnees.add(farRight);
+        return coordonnees;
+    }
 
     @Override
     public void onConnectionFailed(ConnectionResult connectionResult) {
