@@ -4,15 +4,11 @@ package data.com.caoutchou;
  * Created by valentin on 10/15/14.
  */
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
-import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
-import android.view.Menu;
-import android.view.View;
 import android.view.Window;
 
 import org.json.JSONArray;
@@ -22,9 +18,6 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
 
 import data.com.model.Distributeur;
 import data.com.model.DistributeurDataSource;
@@ -38,6 +31,7 @@ public class SplashActivity extends ActionBarActivity {
     private static final String PREFS_NAME = "MyPrefsFile";
     private PharmacieDataSource pharmacieDataSource;
     private DistributeurDataSource distributeurDataSource;
+    private boolean isDB;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -46,18 +40,21 @@ public class SplashActivity extends ActionBarActivity {
         getActionBar().hide();
         pharmacieDataSource = new PharmacieDataSource(this);
         distributeurDataSource = new DistributeurDataSource(this);
+        try {
+            pharmacieDataSource.open();
+            isDB = pharmacieDataSource.isEmpty();
+            pharmacieDataSource.close();
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
         setContentView(R.layout.splashscreen);
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run() {
-                try {
-                    pharmacieDataSource.open();
-                    if (pharmacieDataSource.isEmpty()) {
-                        createArrays();
-                    }
-                }
-                catch (SQLException e) {
-                    e.printStackTrace();
+                if (!isDB)
+                {
+                    createDB();
                 }
                 Intent mainIntent = new Intent(SplashActivity.this,MapsActivity.class);
                 SplashActivity.this.startActivity(mainIntent);
@@ -91,7 +88,7 @@ public class SplashActivity extends ActionBarActivity {
 
     }
 
-    public void createArrays()
+    public void createDB()
     {
         JSONArray jsonArrayPharmacie = loadJSONFromAsset("pharmacie-idf.json");
         JSONArray jsonArrayDistributeurs = loadJSONFromAsset("preservatif.json");

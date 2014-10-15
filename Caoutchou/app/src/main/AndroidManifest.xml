@@ -7,7 +7,7 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/Theme.AppCompat.Light" >
+        android:theme="@style/AppTheme" >
 
         <activity
             android:name=".SplashActivity"
@@ -21,11 +21,7 @@
 
         <activity
             android:name=".MapsActivity"
-            android:label="@string/title_activity_maps"
-            android:parentActivityName="data.com.caoutchou.SplashActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="data.com.caoutchou.SplashActivity" />
+            android:label="@string/title_activity_maps">
         </activity>
 
         <activity

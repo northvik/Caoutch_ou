@@ -3,7 +3,6 @@ package data.com.caoutchou;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.app.Fragment;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentSender;
@@ -14,7 +13,6 @@ import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Parcelable;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -23,7 +21,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -33,24 +30,15 @@ import com.google.android.gms.location.LocationClient;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.Projection;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -67,15 +55,11 @@ public class MapsActivity extends ActionBarActivity implements
     private LocationManager mLocMgr;
     private LocationClient mLocationClient;
     private final static int CONNECTION_FAILURE_RESOLUTION_REQUEST = 9000;
-    private ArrayList<Pharmacie> pharmacies = new ArrayList<Pharmacie>();
-    private ArrayList<Distributeur> distributeurs = new ArrayList<Distributeur>();
     private SharedPreferences settings;
     private DistributeurDataSource distributeurDataSource;
     private PharmacieDataSource pharmacieDataSource;
     private static final String PREFS_NAME = "MyPrefsFile";
-    private ImageView splashImageView;
-    boolean splashloading = false;
-    private Fragment maps;
+    private boolean isFirstLoading;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,31 +85,6 @@ public class MapsActivity extends ActionBarActivity implements
     private boolean isGpsOn() {
         return mLocMgr.isProviderEnabled(LocationManager.GPS_PROVIDER);
     }
-
-    public JSONArray loadJSONFromAsset(String filename) {
-        String json = null;
-        try {
-            InputStream is = getAssets().open(filename);
-            int size = is.available();
-            byte[] buffer = new byte[size];
-            is.read(buffer);
-            is.close();
-            json = new String(buffer, "UTF-8");
-        } catch (IOException ex) {
-            ex.printStackTrace();
-            return null;
-        }
-        JSONArray jsonArray = null;
-        try {
-            jsonArray = new JSONArray(json);
-        }
-        catch (JSONException e) {
-            e.printStackTrace();
-        }
-        return jsonArray;
-
-    }
-
 
     private void showGPSDisabledAlertToUser(){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
@@ -161,6 +120,7 @@ public class MapsActivity extends ActionBarActivity implements
         public void onProviderDisabled(String provider) {}
         @Override
         public void onLocationChanged(Location location) {
+
         }
     };
 
@@ -201,9 +161,18 @@ public class MapsActivity extends ActionBarActivity implements
                     .getMap();
             if (mMap != null) {
                 mMap.setMyLocationEnabled(true);
-                setUpMap();
                 mMap.setInfoWindowAdapter(new PopupAdapter(getLayoutInflater(), getApplicationContext()));
                 mMap.setOnInfoWindowClickListener(this);
+                mMap.setOnCameraChangeListener(new GoogleMap.OnCameraChangeListener() {
+                    @Override
+                    public void onCameraChange(CameraPosition cameraPosition) {
+                            if (!isFirstLoading)
+                            {
+                                setUpMap();
+                            }
+                    }
+                });
+
             }
         }
     }
@@ -240,53 +209,6 @@ public class MapsActivity extends ActionBarActivity implements
             e.printStackTrace();
         }
     }
-
-    private void createPharmacies(JSONArray jsonArray)
-    {
-        pharmacies.clear();
-        try {
-            for (int i = 0; i < jsonArray.length(); i++) {
-                if (jsonArray.getJSONObject(i) != null)
-                {
-                    Pharmacie pharma = new Pharmacie();
-                    JSONObject jsonObject = jsonArray.getJSONObject(i);
-                    pharma.setName(jsonObject.getString("name"));
-                    pharma.setTelephone(jsonObject.getString("telephone"));
-                    pharma.setAdrComplete(jsonObject.getString("adresse_complete"));
-                    pharma.setLng(jsonObject.getDouble("lng"));
-                    pharma.setLat(jsonObject.getDouble("lat"));
-                    pharmacies.add(pharma);
-                }
-            }
-        }
-        catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void createDistributeurs(JSONArray jsonArray)
-    {
-        distributeurs.clear();
-        try {
-            for (int i = 0; i < jsonArray.length(); i++) {
-                if (jsonArray.getJSONObject(i) != null)
-                {
-                    Distributeur distrib = new Distributeur();
-                    JSONObject jsonObject = jsonArray.getJSONObject(i);
-
-                    distrib.setName(jsonObject.getString("name"));
-                    distrib.setAdrComplete(jsonObject.getString("adresse_complete"));
-                    distrib.setLng(jsonObject.getDouble("lng"));
-                    distrib.setLat(jsonObject.getDouble("lat"));
-                    distributeurs.add(distrib);
-                }
-            }
-        }
-        catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
-
 
     private void setUpMarkerDistrib(Distributeur distrib) {
         StringBuilder snippet = new StringBuilder();
@@ -361,6 +283,14 @@ public class MapsActivity extends ActionBarActivity implements
         LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
         CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, 17);
         mMap.animateCamera(cameraUpdate);
+        isFirstLoading = true;
+        new Handler().postDelayed(new Runnable(){
+            @Override
+            public void run() {
+                setUpMap();
+                isFirstLoading = false;
+            }
+        }, 3000);
     }
 
     @Override

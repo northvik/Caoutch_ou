@@ -8,6 +8,7 @@
     <string name="navigation">Itinéraire</string>
     <string name="splashscreen">Splashscreen de l\'application</string>
     <string name="distributeur">Distributeurs</string>
+    <string name="maj">Mise à jour de la base de données...</string>
 
 
 </resources>
