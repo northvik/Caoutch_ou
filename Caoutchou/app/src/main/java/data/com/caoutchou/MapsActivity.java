@@ -38,6 +38,7 @@ import com.google.android.gms.maps.Projection;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -371,13 +372,16 @@ public class MapsActivity extends ActionBarActivity implements
 
     public ArrayList<LatLng> getFarLeftAndFarRight(GoogleMap map){
         Projection pr = map.getProjection();
-        LatLng farLeft = pr.getVisibleRegion().farLeft;
-        LatLng farRight =  pr.getVisibleRegion().farRight;
+        LatLngBounds bounds = pr.getVisibleRegion().latLngBounds;
+        LatLng northEast = bounds.northeast;
+        LatLng southWest =  bounds.southwest;
         ArrayList<LatLng> coordonnees = new ArrayList<LatLng>();
-        coordonnees.add(farLeft);
-        coordonnees.add(farRight);
+        coordonnees.add(northEast);
+        coordonnees.add(southWest);
         return coordonnees;
     }
+
+
 
     @Override
     public void onConnectionFailed(ConnectionResult connectionResult) {
