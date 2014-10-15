@@ -1,13 +1,10 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <!--<style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">-->
-        <!--&lt;!&ndash; Customize your theme here. &ndash;&gt;-->
-    <!--</style>-->
-
     <style name="AppTheme" parent="@style/Theme.AppCompat.Light">
         <item name="android:actionBarStyle">@style/AppTheme.ActionBar</item>
         <item name="android:actionMenuTextColor">@color/white</item>
+        <item name="android:actionOverflowButtonStyle">@style/AppTheme.ActionBar.OverFlow</item>
+        <item name="android:homeAsUpIndicator">@drawable/ic_action_back</item>
     </style>
 
     <style name="AppTheme.ActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
@@ -19,5 +16,8 @@
         <item name="android:textColor">@color/white</item>
     </style>
 
+    <style name="AppTheme.ActionBar.OverFlow">
+        <item name="android:src">@drawable/ic_action_overflow</item>
+    </style>
 
 </resources>
