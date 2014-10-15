@@ -5,6 +5,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.google.android.gms.maps.model.LatLng;
+
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -87,6 +89,26 @@ public class DistributeurDataSource {
 
         Cursor cursor = database.query(MySQLiteHelper.TABLE_DISTRIB,
                 allColumns, null, null, null, null, null);
+
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            Distributeur Distributeur = cursorToDistributeur(cursor);
+            Distributeurs.add(Distributeur);
+            cursor.moveToNext();
+        }
+        // make sure to close the cursor
+        cursor.close();
+        return Distributeurs;
+    }
+
+    public List<Distributeur> getCoordonateDistributeurs(ArrayList<LatLng> view) {
+        List<Distributeur> Distributeurs = new ArrayList<Distributeur>();
+
+        Cursor cursor = database.query(MySQLiteHelper.TABLE_DISTRIB,
+                allColumns,
+                MySQLiteHelper.COLUMN_LAT + " <= " + view. +
+                " AND " + MySQLiteHelper.COLUMN_LAT + "  >= ",
+                null, null, null, null);
 
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
