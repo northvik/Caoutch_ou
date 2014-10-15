@@ -12,5 +12,4 @@
         android:contentDescription="@string/splashscreen"
         android:src="@drawable/splashscreen"/>
 
-
 </RelativeLayout>
