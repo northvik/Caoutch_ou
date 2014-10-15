@@ -3,7 +3,10 @@
 
     <string name="app_name">Caoutch\'où</string>
     <string name="title_activity_maps">Caoutch\'où</string>
-    <string name="settings">Préferences</string>
+    <string name="settings">Préférences</string>
+    <string name="filtres">Filtres</string>
+    <string name="pharmacies">Pharmacies</string>
+    <string name="distributeurs">Distributeurs</string>
     <string name="menuSet">Le menu des préferences</string>
     <string name="navigation">Itinéraire</string>
     <string name="splashscreen">Splashscreen de l\'application</string>

@@ -12,7 +12,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="15dp"
         android:layout_centerHorizontal="true"
-        android:text="@string/settings"
+        android:text="@string/filtres"
         android:textColor="@color/lightGray"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="25sp" />
@@ -20,27 +20,23 @@
     <Switch
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Pharmacies"
+        android:text="@string/pharmacies"
         android:textColor="@color/white"
         android:id="@+id/pharmaSwitch"
         android:layout_below="@+id/settingTitle"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="27dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+         />
 
     <Switch
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
-        android:text="Distributeurs"
+        android:text="@string/distributeurs"
         android:id="@+id/distribSwitch"
         android:layout_below="@+id/pharmaSwitch"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_marginTop="27dp"
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>
