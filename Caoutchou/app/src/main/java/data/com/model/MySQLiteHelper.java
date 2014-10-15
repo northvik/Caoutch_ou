@@ -32,7 +32,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             COLUMN_LAT + " REAL, "+
             COLUMN_LNG + " REAL, "+
             COLUMN_TEL + " text, "+
-            COLUMN_ADDRESS + " text, "
+            COLUMN_ADDRESS + " text "
             +");";
     private static final String DATABASE_CREATE_DIS = "create table "
             + TABLE_DISTRIB + "(" + COLUMN_ID
@@ -41,7 +41,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             COLUMN_LAT + " REAL, "+
             COLUMN_LNG + " REAL, "+
             COLUMN_HORAIRE + " text, "+
-            COLUMN_ADDRESS + " text, "
+            COLUMN_ADDRESS + " text "
             +");";
 
     public MySQLiteHelper(Context context) {

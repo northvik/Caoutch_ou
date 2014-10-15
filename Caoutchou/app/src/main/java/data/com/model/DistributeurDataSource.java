@@ -56,6 +56,25 @@ public class DistributeurDataSource {
         return newDistributeur;
     }
 
+    public Distributeur createDistributeur(Distributeur distributeur) {
+        ContentValues values = new ContentValues();
+        values.put(MySQLiteHelper.COLUMN_NAME, distributeur.getName());
+        values.put(MySQLiteHelper.COLUMN_LAT, distributeur.getLat());
+        values.put(MySQLiteHelper.COLUMN_LNG, distributeur.getLng());
+        values.put(MySQLiteHelper.COLUMN_HORAIRE, distributeur.getHoraires());
+        values.put(MySQLiteHelper.COLUMN_ADDRESS, distributeur.getAdrComplete());
+
+        long insertId = database.insert(MySQLiteHelper.TABLE_DISTRIB, null,
+                values);
+        Cursor cursor = database.query(MySQLiteHelper.TABLE_DISTRIB,
+                allColumns, MySQLiteHelper.COLUMN_ID + " = " + insertId, null,
+                null, null, null);
+        cursor.moveToFirst();
+        Distributeur newDistributeur = cursorToDistributeur(cursor);
+        cursor.close();
+        return newDistributeur;
+    }
+
     public void deleteDistributeur(Distributeur Distributeur) {
         long id = Distributeur.getId();
         System.out.println("Distributeur deleted with id: " + id);

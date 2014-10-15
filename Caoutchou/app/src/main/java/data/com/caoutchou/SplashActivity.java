@@ -21,31 +21,44 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
 import data.com.model.Distributeur;
+import data.com.model.DistributeurDataSource;
 import data.com.model.Pharmacie;
+import data.com.model.PharmacieDataSource;
 
 public class SplashActivity extends ActionBarActivity {
 
-    private final int SPLASH_DISPLAY_LENGTH = 3000;
-    private ArrayList<Pharmacie> pharmacies = new ArrayList<Pharmacie>();
-    private ArrayList<Distributeur> distributeurs = new ArrayList<Distributeur>();
+    private final int SPLASH_DISPLAY_LENGTH = 500;
     private SharedPreferences settings;
     private static final String PREFS_NAME = "MyPrefsFile";
+    private PharmacieDataSource pharmacieDataSource;
+    private DistributeurDataSource distributeurDataSource;
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
         getActionBar().hide();
+        pharmacieDataSource = new PharmacieDataSource(this);
+        distributeurDataSource = new DistributeurDataSource(this);
         setContentView(R.layout.splashscreen);
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run() {
-                //createArrays();
+                try {
+                    pharmacieDataSource.open();
+                    if (pharmacieDataSource.isEmpty()) {
+                        createArrays();
+                    }
+                }
+                catch (SQLException e) {
+                    e.printStackTrace();
+                }
                 Intent mainIntent = new Intent(SplashActivity.this,MapsActivity.class);
                 SplashActivity.this.startActivity(mainIntent);
                 SplashActivity.this.finish();
@@ -88,8 +101,9 @@ public class SplashActivity extends ActionBarActivity {
 
     private void createPharmacies(JSONArray jsonArray)
     {
-        pharmacies.clear();
+
         try {
+            pharmacieDataSource.open();
             for (int i = 0; i < jsonArray.length(); i++) {
                 if (jsonArray.getJSONObject(i) != null)
                 {
@@ -100,36 +114,45 @@ public class SplashActivity extends ActionBarActivity {
                     pharma.setAdrComplete(jsonObject.getString("adresse_complete"));
                     pharma.setLng(jsonObject.getDouble("lng"));
                     pharma.setLat(jsonObject.getDouble("lat"));
-                    pharmacies.add(pharma);
+                    pharmacieDataSource.createPharmacie(pharma);
                 }
             }
+            pharmacieDataSource.close();
         }
         catch (JSONException e) {
             e.printStackTrace();
         }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+
     }
 
     private void createDistributeurs(JSONArray jsonArray)
     {
-        distributeurs.clear();
         try {
+            distributeurDataSource.open();
             for (int i = 0; i < jsonArray.length(); i++) {
                 if (jsonArray.getJSONObject(i) != null)
                 {
                     Distributeur distrib = new Distributeur();
                     JSONObject jsonObject = jsonArray.getJSONObject(i);
-
                     distrib.setName(jsonObject.getString("name"));
                     distrib.setAdrComplete(jsonObject.getString("adresse_complete"));
                     distrib.setLng(jsonObject.getDouble("lng"));
                     distrib.setLat(jsonObject.getDouble("lat"));
-                    distributeurs.add(distrib);
+                    distributeurDataSource.createDistributeur(distrib);
                 }
             }
+            distributeurDataSource.close();
         }
         catch (JSONException e) {
             e.printStackTrace();
         }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+
     }
 
 

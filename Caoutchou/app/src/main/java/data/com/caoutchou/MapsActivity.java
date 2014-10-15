@@ -48,10 +48,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import data.com.model.Distributeur;
+import data.com.model.DistributeurDataSource;
 import data.com.model.Pharmacie;
+import data.com.model.PharmacieDataSource;
 
 public class MapsActivity extends ActionBarActivity implements
         GooglePlayServicesClient.ConnectionCallbacks,
@@ -64,6 +67,8 @@ public class MapsActivity extends ActionBarActivity implements
     private ArrayList<Pharmacie> pharmacies = new ArrayList<Pharmacie>();
     private ArrayList<Distributeur> distributeurs = new ArrayList<Distributeur>();
     private SharedPreferences settings;
+    private DistributeurDataSource distributeurDataSource;
+    private PharmacieDataSource pharmacieDataSource;
     private static final String PREFS_NAME = "MyPrefsFile";
     private ImageView splashImageView;
     boolean splashloading = false;
@@ -77,6 +82,8 @@ public class MapsActivity extends ActionBarActivity implements
         settings = this.getSharedPreferences(PREFS_NAME, 0);
         setContentView(R.layout.activity_maps);
         actBar.show();
+        distributeurDataSource = new DistributeurDataSource(this);
+        pharmacieDataSource = new PharmacieDataSource(this);
         mLocMgr = (LocationManager) getSystemService(LOCATION_SERVICE);
         mLocationClient = new LocationClient(this, this, this);
         mLocMgr.requestLocationUpdates(LocationManager.GPS_PROVIDER, 500, 0, mLocationListener);
@@ -205,21 +212,30 @@ public class MapsActivity extends ActionBarActivity implements
     private void setUpMap() {
       //  JSONArray jsonArrayPharmacie = getJsonFile(getApplicationContext(), "pharmacie-idf.json");
       //  JSONArray jsonArrayDistributeurs = getJsonFile(getApplicationContext(), "preservatif.json");
+        try {
+
         if (settings.getBoolean("pharma", true)) {
-            JSONArray jsonArrayPharmacie = loadJSONFromAsset("pharmacie-idf.json");
-            createPharmacies(jsonArrayPharmacie);
-            for (Pharmacie pharma : pharmacies) {
+            pharmacieDataSource.open();
+           //JSONArray jsonArrayPharmacie = loadJSONFromAsset("pharmacie-idf.json");
+           // createPharmacies(jsonArrayPharmacie);
+            for (Pharmacie pharma : pharmacieDataSource.getAllPharmacies()) {
                 setUpMarkerPharma(pharma);
             }
+            pharmacieDataSource.close();
         }
         if (settings.getBoolean("distrib", true)) {
-            JSONArray jsonArrayDistributeurs = loadJSONFromAsset("preservatif.json");
-            createDistributeurs(jsonArrayDistributeurs);
-            for (Distributeur distrib : distributeurs) {
+            distributeurDataSource.open();
+           // JSONArray jsonArrayDistributeurs = loadJSONFromAsset("preservatif.json");
+           // createDistributeurs(jsonArrayDistributeurs);
+            for (Distributeur distrib : distributeurDataSource.getAllDistributeurs()) {
                 setUpMarkerDistrib(distrib);
             }
+            distributeurDataSource.close();
         }
 
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     private void createPharmacies(JSONArray jsonArray)

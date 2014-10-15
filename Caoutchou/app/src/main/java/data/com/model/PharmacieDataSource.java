@@ -56,6 +56,25 @@ public class PharmacieDataSource {
         return newPharmacie;
     }
 
+    public Pharmacie createPharmacie(Pharmacie pharmacie) {
+        ContentValues values = new ContentValues();
+        values.put(MySQLiteHelper.COLUMN_NAME, pharmacie.getName());
+        values.put(MySQLiteHelper.COLUMN_LAT, pharmacie.getLat());
+        values.put(MySQLiteHelper.COLUMN_LNG, pharmacie.getLng());
+        values.put(MySQLiteHelper.COLUMN_TEL, pharmacie.getTelephone());
+        values.put(MySQLiteHelper.COLUMN_ADDRESS, pharmacie.getAdrComplete());
+
+        long insertId = database.insert(MySQLiteHelper.TABLE_PHARMA, null,
+                values);
+        Cursor cursor = database.query(MySQLiteHelper.TABLE_PHARMA,
+                allColumns, MySQLiteHelper.COLUMN_ID + " = " + insertId, null,
+                null, null, null);
+        cursor.moveToFirst();
+        Pharmacie newPharmacie = cursorToPharmacie(cursor);
+        cursor.close();
+        return newPharmacie;
+    }
+
     public void deletePharmacie(Pharmacie Pharmacie) {
         long id = Pharmacie.getId();
         System.out.println("Pharmacie deleted with id: " + id);
@@ -90,4 +109,11 @@ public class PharmacieDataSource {
         Pharmacie.setAdrComplete(cursor.getString(5));
         return Pharmacie;
     }
+
+    public boolean isEmpty()
+    {
+        Cursor mCursor = database.rawQuery("SELECT * FROM " + MySQLiteHelper.TABLE_PHARMA, null);
+        return !mCursor.moveToFirst();
+    }
+
 }
