@@ -10,13 +10,15 @@ public class Pharmacie implements java.io.Serializable{
     private Double lng;//wgs84[1]
     private String telephone;
     private String adrComplete;// numvoie+' '+typvoie+' '+voie+', '+cp+' '+commune
+    private Integer id;
 
-    public Pharmacie(String name, Double lat, Double lng, String telephone, String adrComplete) {
+    public Pharmacie(String name, Double lat, Double lng, String telephone, String adrComplete, Integer id) {
         this.name = name;
         this.lat = lat;
         this.lng = lng;
         this.telephone = telephone;
         this.adrComplete = adrComplete;
+        this.id = id;
     }
 
     public Pharmacie()
@@ -62,5 +64,13 @@ public class Pharmacie implements java.io.Serializable{
 
     public void setAdrComplete(String adrComplete) {
         this.adrComplete = adrComplete;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public long getId() {
+        return id;
     }
 }

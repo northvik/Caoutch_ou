@@ -8,20 +8,21 @@ public class Distributeur implements java.io.Serializable {
     private Double lng;//geo_coordinates[1]
     private String adrComplete;
     private String horaires;
+    private Integer id;
 
 
-    public Distributeur(String name, String acces, Double lat, Double lng, String adrComplete, String horaires) {
+    public Distributeur(String name, String acces, Double lat, Double lng, String adrComplete, String horaires, Integer id) {
         this.name = name;
         this.acces = acces;
         this.lat = lat;
         this.lng = lng;
         this.adrComplete = adrComplete;
         this.horaires = horaires;
+        this.id = id;
     }
 
-    public Distributeur()
-    {
-
+    public Distributeur(){
+        
     }
 
     public String getName() {
@@ -70,5 +71,13 @@ public class Distributeur implements java.io.Serializable {
 
     public void setHoraires(String horaires) {
         this.horaires = horaires;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getId() {
+        return id;
     }
 }

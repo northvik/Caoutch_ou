@@ -72,6 +72,7 @@ public class MapsActivity extends ActionBarActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         ActionBar actBar = getSupportActionBar();
         settings = this.getSharedPreferences(PREFS_NAME, 0);
         setContentView(R.layout.activity_maps);
