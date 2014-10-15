@@ -11,7 +11,7 @@
 
         <activity
             android:name=".SplashActivity"
-            android:label="@string/splashscreen" >
+            android:label="@string/title_activity_maps" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
