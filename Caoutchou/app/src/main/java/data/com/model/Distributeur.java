@@ -1,6 +1,6 @@
 package data.com.model;
 
-public class Distributeur {
+public class Distributeur implements java.io.Serializable {
 
     private String name;//site
     private String acces;

@@ -3,7 +3,7 @@ package data.com.model;
 /**
  * Created by camillepire on 13/10/2014.
  */
-public class Pharmacie {
+public class Pharmacie implements java.io.Serializable{
 
     private String name;//rs
     private Double lat;//wgs84[0]

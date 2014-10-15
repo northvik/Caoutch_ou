@@ -3,17 +3,18 @@ package data.com.caoutchou;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.Context;
+import android.app.Fragment;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.content.SharedPreferences;
-import android.content.res.AssetManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Parcelable;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -22,6 +23,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -63,7 +65,9 @@ public class MapsActivity extends ActionBarActivity implements
     private ArrayList<Distributeur> distributeurs = new ArrayList<Distributeur>();
     private SharedPreferences settings;
     private static final String PREFS_NAME = "MyPrefsFile";
-
+    private ImageView splashImageView;
+    boolean splashloading = false;
+    private Fragment maps;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,11 +75,12 @@ public class MapsActivity extends ActionBarActivity implements
         ActionBar actBar = getSupportActionBar();
         settings = this.getSharedPreferences(PREFS_NAME, 0);
         setContentView(R.layout.activity_maps);
+        actBar.show();
         mLocMgr = (LocationManager) getSystemService(LOCATION_SERVICE);
         mLocationClient = new LocationClient(this, this, this);
         mLocMgr.requestLocationUpdates(LocationManager.GPS_PROVIDER, 500, 0, mLocationListener);
         if (isGpsOn()){
-            setUpMapIfNeeded();
+          setUpMapIfNeeded();
         }
         else{
             showGPSDisabledAlertToUser();
